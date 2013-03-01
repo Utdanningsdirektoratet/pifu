@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Senter for IKT i utdanningen -->
+<!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
+
+
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
+	
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	<!-- Properties                                                            -->
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+
+	<!-- Et minimum av metadata er obligatorisk i enhver <enterprise>-struktur -->
+	<properties lang="no"> <!-- lang: angir språk på metadata, ISO639 -->
+
+		<!-- Kommentar om metadata -->
+		<comments>Full synkronisering av data fra Måne kommunes skoleadministrative system</comments>
+
+		<!-- System som initierer dataoverføring -->
+		<datasource>mitt-sas@måne.kommune.no</datasource> 
+		
+		<!-- System som er mål for dataoverføring -->
+		<target>mitt-bas@måne.kommune.no</target>
+		
+		<!-- Type hendelse, for denne versjonen  -->
+		<type>full</type> 
+
+		<!-- Tidspunkt for opprettelse i kilde, ISO8601 -->
+		<datetime>2007-03-10T10:02:01</datetime>
+		
+	</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	<!-- Person                                                                -->
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	
+	<!-- Personinformasjon om Janne Stor -->
+	<person> 
+
+		<!-- Kommentar om person -->
+		<comments lang="no">Informasjon om Janne Stor</comments> <!-- lang: angir språk på kommentar, ISO639 -->	
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid sourcedidtype="Old"> <!-- sourcedidtype: gjør det mulig å endre sourcedid, 'New', 'Old', 'Duplicate' -->
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>Måne_personid_1235</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid sourcedidtype="New"> <!-- sourcedidtype: gjør det mulig å endre sourcedid, 'New', 'Old', 'Duplicate' -->
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_01235</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Fødselsnummer -->
+		<userid useridtype="personNIN">17097055655</userid>
+		
+		<!-- Identifikator i SAS/SIS -->
+		<userid useridtype="sisID">OID147238264</userid>
+		
+		<!-- Ansattnummer -->
+		<userid useridtype="workforceID">1384628</userid>
+
+		<!-- Lokalt brukernavn med passord -->
+		<userid useridtype="username" password="4bee4fc53ab2a25fb6bc15b892e97b82" pwencryptiontype="MD5" authenticationtype="Kerberos">jannest</userid>
+
+		<!-- Navn -->
+		<name>
+			<fn>Dr Janne A. Stor</fn> <!-- formatert navn -->
+			<n> <!-- Navn med alle parter adskilt -->
+				<family>Stor</family> <!-- etternavn -->
+				<given>Janne</given> <!-- fornavn -->
+			</n>
+		</name>
+
+		<!-- Demografisk info -->
+		<demographics>
+			<gender>1</gender> <!-- kjønn, IMS: 0-'Unknown', 1-'Female', 2-'Male', NB: samsvarer ikke med ISO/IEC 5218 som brukes i eksempeldataene (der 0-'ukjent', 1-'mann', 2-'kvinne', 9-'gjelder ikke')! -->
+			<bday>1970-09-17</bday> <!-- fødselsdato, ISO8601-->
+		</demographics>
+
+		<!-- E-post med høyest prioritet -->
+		<email>janne.stor@måne.kommune.no</email>
+
+		<!-- Url med høyest prioritet -->
+		<url>http://www.måne.kommune.no/ansatte/jannest</url>
+
+		<!-- Telefon med høyest prioritet -->
+		<tel teltype="1">+4773000073</tel> <!-- telefonnummer, teltype: 1=Voice, 2=Fax, 3=Mobile -->
+		<!-- Telefaks med høyest prioritet -->
+		<tel teltype="2">+4773000001</tel> <!-- telefonnummer, teltype: 1=Voice, 2=Fax, 3=Mobile -->
+		<!-- Mobiltelefon med høyest prioritet -->
+		<tel teltype="3">+4798000001</tel> <!-- telefonnummer, teltype: 1=Voice, 2=Fax, 3=Mobile -->
+	
+		<!-- Leverings-/postadresse med høyest prioritet -->
+		<adr>
+			<extadd>leilighet 7</extadd> <!-- ekstra adresseinfo -->
+			<street>Neil Armstrongs aveny 23</street> <!-- gateadresse linje 1-->
+			<locality>Måneby</locality> <!-- poststed -->
+			<pcode>7271</pcode> <!-- postnummer -->
+		</adr>
+	
+		<!-- Bilde -->
+		<photo imgtype="image/jpeg"> <!-- bildetype i MIME-notasjon, eks: 'gif', 'jpeg', 'png'.. -->
+			<extref>http://www.måne.kommune.no/ansatte/img/jannest.jpg</extref> <!-- referanse til ekstern lokasjon hvor bildet ligger-->
+		</photo>
+	
+<!--		<!-\- System som initierer dataoverføring -\->	
+		<datasource>mitt-sas@måne.kommune.no</datasource>-->
+	
+		<!-- Utvidelser -->
+		<extension>
+
+			<!-- Privat e-post -->
+			<pifu_email type="personEmailPrivate">janne_stor@gmail.com</pifu_email>
+	
+			<!-- E-post ved organisasjonen -->
+			<pifu_email type="personEmailAtOrg">janne.stor@måne.kommune.no</pifu_email>
+		
+			<!-- Privat url -->
+			<pifu_url type="personURLPrivate">http://www.jannestor.no</pifu_url> 
+		
+			<!-- Url ved organisasjonen -->
+			<pifu_url type="personURLAtOrg">http://www.måne.kommune.no/ansatte/jannest</pifu_url>	
+		
+			<!-- Privat telefon -->	
+			<pifu_tel type="personTelephonePrivate">+4773000037</pifu_tel>
+
+			<!-- Privat mobiltelefon -->	
+			<pifu_tel type="personMobilePrivate">+4798000000</pifu_tel>
+
+			<!-- Telefon ved organisasjonen -->	
+			<pifu_tel type="personTelephoneAtOrg" priority="1">+4773000073</pifu_tel>
+
+			<!-- Telefon ved organisasjonen -->	
+			<pifu_tel type="personTelephoneAtOrg" priority="2">+4773000077</pifu_tel>
+
+			<!-- Mobiltelefon ved organisasjonen -->			
+			<pifu_tel type="personMobileAtOrg">+4798000001</pifu_tel>		
+
+			<!-- Telefaks ved organisasjonen -->			
+			<pifu_tel type="personFaxAtOrg">+4773000001</pifu_tel>
+
+			<!-- Telefon sentralbord/sekretær -->			
+			<pifu_tel type="personSwitchboard">+4773730007</pifu_tel>	
+	
+			<!-- Folkeregistrert adresse -->
+			<pifu_adr type="personRegisteredAddressPrivate">  
+				<adr>
+					<street>Planetariums gt 314</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>
+
+			<!-- Faktisk bostedsadresse -->
+			<pifu_adr type="personPostalAddressPrivate">
+				<adr>
+					<extadd>leilighet 7</extadd> <!-- ekstra adresseinfo -->
+					<street>Neil Armstrongs aveny 23</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>		
+
+			<!-- Besøksadresse ved organisasjonen -->
+			<pifu_adr type="personVisitorAddressAtOrg">
+				<adr>
+					<extadd>blokk B, kontor 11</extadd> <!-- ekstra adresseinfo -->
+					<street>Merkurstien 7</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>
+		
+			<!-- Postadresse ved organisasjonen -->
+			<pifu_adr type="personPostalAddressAtOrg">
+				<adr>
+					<pobox>123</pobox> <!-- postboks -->
+					<street>Neil Armstrongs aveny 23</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7272</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>
+
+			<!-- Ferieadresse med tidsbegrenset gyldighet -->
+			<pifu_adr type="personPostalAddressHoliday">
+				<adr>
+					<street>Lyckliga gatan nr 1</street> <!-- gateadresse linje 1 -->
+					<locality>Stjernestad</locality> <!-- poststed -->
+					<pcode>2121</pcode> <!-- postnummer -->
+				</adr> 
+
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe> 
+					<begin>2007-07-10</begin> <!-- fra-dato -->
+					<end>2007-08-02</end> <!-- til-dato -->
+				</timeframe>
+			</pifu_adr>		
+
+			<!-- Status -->
+			<pifu_status type="activeInactive">aktiv</pifu_status>
+
+			<!-- Foretrukket språk eller språkform -->
+			<pifu_preferredLanguage source="ISO 639-1">nb</pifu_preferredLanguage> <!-- angir språk, ISO639 Alpha-2/Alpha-3 koder-->	
+
+			<!-- Morsmål -->
+			<pifu_nativeTongue source="ISO 639-2">smj</pifu_nativeTongue> <!-- angir språk, ISO639 Alpha-2/Alpha-3 koder --> 
+			<pifu_nativeTongue source="ISO 639-1">no</pifu_nativeTongue> <!-- angir språk, ISO639 Alpha-2/Alpha-3 koder -->	
+
+			<!-- Morten Stor er pårørende -->	
+			<pifu_hasContactPerson type="nextOfKin"> 
+				<sourcedid>
+					<source>mitt-sas@måne.kommune.no</source>
+					<id>global_ID_02772</id>
+				</sourcedid>
+			</pifu_hasContactPerson>
+	
+		</extension>
+
+	</person>	
+	
+
+	<!-- Personinformasjon om Ola Nordmann -->
+	<person > 
+		<!-- Kommentar om person -->
+		<comments lang="no">Informasjon om Ola Nordmann</comments> <!-- lang: angir språk på kommentar, ISO639-->
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_01236</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Fødselsnummer -->
+		<userid useridtype="personNIN">09119311111</userid>
+		
+		<!-- Identifikator i SAS/SIS -->
+		<userid useridtype="sisID">OID375927463</userid>
+		
+		<!-- Elevnummer -->
+		<userid useridtype="studentID">5892956</userid>
+
+		<!-- Lokalt brukernavn med passord -->
+		<userid useridtype="username" password="58ddb4dee070bea75429fc667a375167" pwencryptiontype="MD5" authenticationtype="Kerberos">olanord</userid>
+
+		<!-- Navn -->
+		<name>
+			<fn>Ola Tobias Hansen Nordmann</fn> <!-- formatert navn -->
+			<n> <!-- navn med alle parter adskilt -->
+				<family>Nordmann</family> <!-- etternavn -->
+				<given>Ola Tobias</given> <!-- fornavn -->
+			</n>
+		</name> 
+
+		<!-- Demografisk info -->
+		<demographics>
+			<gender>2</gender> <!-- kjønn, IMS: 0-'Unknown', 1-'Female', 2-'Male', NB: samsvarer ikke med ISO/IEC 5218 som brukes i eksempeldataene (der 0-'ukjent', 1-'mann', 2-'kvinne', 9-'gjelder ikke')! -->
+			<bday>1993-11-09</bday> <!-- fødselsdato, ISO8601-->
+		</demographics>
+
+		<!-- E-post med høyest prioritet -->
+		<email>ola_nordmann93@hotmail.com</email>
+
+		<!-- Telefon med høyest prioritet -->
+		<tel teltype="1">+4712345678</tel> <!-- telefonnummer, teltype: 1=Voice, 2=Fax, 3=Mobile -->
+	
+		<!-- Leverings-/postadresse med høyest prioritet -->
+		<adr>
+			<street>Henrik Ibsens gate 1</street> <!-- gateadresse linje 1 -->
+			<locality>Måneby</locality> <!-- poststed -->
+			<pcode>7271</pcode> <!-- postnummer -->
+		</adr>
+	
+		<!-- Utvidelser -->
+		<extension>
+
+			<!-- Privat e-post -->
+			<pifu_email type="personEmailPrivate">ola_nordmann93@hotmail.com</pifu_email>
+	
+			<!--  Privat telefon -->	
+			<pifu_tel type="personTelephonePrivate">+4712345678</pifu_tel>
+						
+			<!-- Privat mobiltelefon -->
+			<pifu_tel type="personMobilePrivate">+4798765432</pifu_tel>
+
+			<!-- Folkeregistrert adresse -->
+			<pifu_adr type="personRegisteredAddressPrivate">
+				<adr>
+					<street>Henrik Ibsens gate 1</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>
+
+			<!-- Status -->
+			<pifu_status type="activeInactive">aktiv</pifu_status>
+			
+			<!-- Status -->
+			<pifu_status type="pupilStatus">heltid</pifu_status>
+
+			<!-- Foretrukket språk eller språkform -->	
+			<pifu_preferredLanguage source="ISO 639-1">nn</pifu_preferredLanguage> <!-- angir språk, ISO639 Alfa-2/Alpha-3 koder -->	
+			
+
+			<!-- Jon Nordmann er forelder/foresatt -->	
+			<pifu_hasContactPerson type="guardian">
+				<sourcedid>
+					<source>mitt-sas@måne.kommune.no</source>
+					<id>global_ID_03822</id>
+				</sourcedid>
+			</pifu_hasContactPerson>		
+
+			<!-- Bertha Nordmann er forelder/foresatt -->
+			<pifu_hasContactPerson type="guardian">
+				<sourcedid>
+					<source>mitt-sas@måne.kommune.no</source>
+					<id>global_ID_03823</id>
+				</sourcedid>
+			</pifu_hasContactPerson>					
+		</extension>
+
+	</person>	
+
+
+	<!-- Personinformasjon om Morten Stor, Janne Stors pårørende -->
+	<person> 
+	
+		<!-- Kommentar om person -->
+		<comments lang="no">Informasjon om Morten Stor, Janne Stors pårørende</comments> <!-- lang: angir språk på kommentar, ISO639-->
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_02772</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Navn --> 
+		<name> 
+			<fn>Morten Stor</fn> <!-- formatert navn -->
+			<n> <!-- Navn med alle parter adskilt -->
+				<family>Stor</family> <!-- Etternavn -->
+				<given>Morten</given> <!-- Fornavn -->
+			</n>
+		</name>
+	
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!--  Privat telefon -->	
+			<pifu_tel type="personTelephonePrivate">+4798000090</pifu_tel>
+
+		</extension>
+		
+	</person>	
+
+
+	<!-- Personinformasjon om Jon Nordmann, Ola Nordmanns foresatte -->
+	<person> 
+
+		<!-- Kommentar om person -->
+		<comments lang="no">Informasjon om Jon Nordmann, Ola Nordmanns foresatte</comments> <!-- lang: angir språk på kommentar, ISO639-->
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_03822</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Navn -->
+		<name>
+			<fn>Jon Nordmann</fn> <!-- formatert navn -->
+			<n> <!-- Navn med alle parter adskilt -->
+				<family>Nordmann</family> <!-- Etternavn -->
+				<given>Jon</given> <!-- Fornavn -->
+			</n>
+		</name>
+
+
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!--  Privat telefon -->	
+			<pifu_tel type="personTelephonePrivate">+4712345678</pifu_tel>
+
+		</extension>
+		
+	</person>	
+	
+	
+	<!-- Personinformasjon om Bertha Nordmann, Ola Nordmanns andre foresatte -->
+	<person> 
+
+		<!-- Kommentar om person -->
+		<comments lang="no">Informasjon om Bertha Nordmann, Ola Nordmanns andre foresatte</comments> <!-- lang: angir språk på kommentar, ISO639-->
+
+		<!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_03823</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Navn -->
+		<name>
+			<fn>Bertha Nordmann</fn> <!-- formatert navn -->
+			<n> <!-- Navn med alle parter adskilt -->
+				<family>Nordmann</family> <!-- Etternavn -->
+				<given>Bertha</given> <!-- Fornavn -->
+			</n>
+		</name>
+
+	
+		<!-- Utvidelser -->
+		<extension>
+
+			<!-- Privat mobiltelefon -->
+			<pifu_tel type="personMobilePrivate">+4799900999</pifu_tel>
+
+		</extension>
+
+	</person>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	<!-- Group                                                                 -->
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+
+	<!-- Informasjon om organisasjonsenheten Måne kommune -->
+	<group> 
+ 
+		<!-- Kommentar om gruppe -->
+		<comments>Informasjon om organisasjonsenheten Måne kommune</comments>
+
+		<!-- Unik og varig id for gruppe, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_org_2</id> <!-- unik og varig id, eks: kommunenummer, organisasjonsnr i brreg... -->
+		</sourcedid>
+	
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-org</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="1">skoleeier</typevalue> <!-- type gruppe, verdier for dette scheme: 1-skoleeier, 2-skole-->
+		</grouptype> 
+
+		<!-- Beskrivelse -->
+		<description>
+			<short>Måne kommune</short> <!-- kort beskrivelse -->
+		</description>
+		
+		<!-- E-post med høyest prioritet -->
+		<email>info@måne.kommune.no</email>
+		
+		<!-- Url med høyest prioritet -->
+		<url>http://www.måne.kommune.no/info</url>
+
+		<!-- Relasjon til seg selv (er org. på toppnivå, og derfor sin egen forelder) -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_2</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måne kommune</label>
+		</relationship>
+
+		<!-- Utvidelser -->
+		<extension>
+
+			<!-- Organisasjonsnummer -->
+			<pifu_id type="organizationNumber"> <!-- type: angir type id -->
+				<pifu_value>999000999</pifu_value>
+				<pifu_scope>Enhetsregisteret</pifu_scope> <!-- gyldighetsområde --> 
+				<pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+
+			<!-- Domenenavn -->
+			<pifu_id type="domainName"> <!-- type: angir type id -->
+				<pifu_value>måne.kommune.no</pifu_value>
+				<pifu_scope>.no</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+
+			<!-- Juridisk navn -->
+			<pifu_name type="legalName"> <!-- type: angir type navn -->           
+				<pifu_value>Måne kommune</pifu_value>
+				<pifu_language source="ISO 639-1">nb</pifu_language> <!-- angir språk på navn, ISO639 Alpha-2/Alpha-3 koder -->
+			</pifu_name>
+
+			<!-- Juridisk navn på engelsk -->
+			<pifu_name type="legalName"> <!-- type: angir type navn -->           
+				<pifu_value>Municipality of Måne</pifu_value>
+				<pifu_language source="ISO 639-1">en</pifu_language> <!-- angir språk på navn, ISO639 Alpha-2/Alpha-3 koder -->
+			</pifu_name>
+	
+			<!-- Navn -->
+			<pifu_name type="name"> <!-- type: angir type navn -->           
+				<pifu_value>Måne kommune</pifu_value>
+			</pifu_name>	
+
+			<!-- E-post for å kontakte organisasjonsenheten -->
+			<pifu_email type="orgEmail">info@måne.kommune.no</pifu_email> 
+	
+			<!-- Organisasjonsenhetens url -->
+				<pifu_url type="orgURL">http://www.måne.kommune.no/info</pifu_url>
+
+			<!-- Organisasjonsenhetens intranett -->
+				<pifu_url type="orgIntranet">http://intranett.måne.no</pifu_url>
+
+			<!-- Telefonnummer for å kontakte organisasjonsenheten -->
+			<pifu_tel type="orgTelephone">+4773730000</pifu_tel>
+	
+			<!-- Organisasjonsenhetens faksnummer -->
+			<pifu_tel type="orgFax">+4773730001</pifu_tel>
+
+			<!-- Organisasjonens postadresse -->
+			<pifu_adr type="orgPostalAddress"> 
+				<adr>
+					<street>Postboks 123</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7272</pcode> <!-- postnummer -->
+				</adr>	
+			</pifu_adr>
+
+			<!-- organisasjonens besøksadresse -->
+			<pifu_adr type="orgVisitorAddress">
+				<adr>
+					<street>Merkurstien 7</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>	
+			</pifu_adr>		
+
+			<!-- organisasjonens leveringsadresse -->
+			<pifu_adr type="orgDeliveryAddress">
+				<adr>
+					<extadd>Administrasjonen, bygg A etg 2</extadd> <!-- ekstra adresseinfo -->
+					<street>Merkurstien 7</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>
+			</pifu_adr>
+
+			<!-- organisasjonens fakturaadresse -->
+			<pifu_adr type="orgBillingAddress">
+				<adr>
+					<extadd>Måne kommune</extadd> <!-- ekstra adresseinfo -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7272</pcode> <!-- postnummer -->
+				</adr>	
+			</pifu_adr>
+	
+		</extension>
+
+	</group>
+
+
+	<!-- Informasjon om organisasjonsenheten Måneflekken skole -->
+	<group>
+
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om organisasjonsenheten Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+
+		<!-- Unik og varig id for gruppe, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_org_17</id> <!-- unik og varig id -->
+		</sourcedid>
+	
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-org</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="2">skole</typevalue> <!-- type gruppe, verdier for dette scheme: 1-skoleeier, 2-skole-->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Måneflekken skole</short> <!-- kort beskrivelse -->
+		</description>	
+	
+		<!-- Relasjon til Måne kommune -->
+		<relationship relation="1"> <!-- 1-parent, 2-child, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_2</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måne kommune</label>
+		</relationship>	
+
+		<!-- Utvidelser -->
+		<extension>
+
+			<!-- Organisasjonsnummer -->
+			<pifu_id type="organizationNumber"> <!-- type: angir type id -->
+				<pifu_value>333000333</pifu_value>
+				<pifu_scope>Enhetsregisteret</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+
+			<!-- Domenenavn -->
+			<pifu_id type="domainName"> <!-- type: angir type id -->
+				<pifu_value>måneflekken.skole.no</pifu_value>
+				<pifu_scope>.no</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Skolens Vigonummer -->
+			<pifu_id type="vigoNumber">
+				<pifu_value>5234</pifu_value>
+				<pifu_scope>vigo</pifu_scope>
+				<pifu_unique>1</pifu_unique>
+			</pifu_id>
+			
+			<!-- Juridisk navn -->
+			<pifu_name type="legalName"> <!-- type: angir type navn -->           
+				<pifu_value>Måneflekken barne- og ungdomsskole</pifu_value>
+			</pifu_name>
+	
+			<!-- Navn -->
+			<pifu_name type="name"> <!-- type: angir type navn -->           
+				<pifu_value>Måneflekken skole</pifu_value>
+			</pifu_name>
+
+			<!-- Fullt navn -->
+			<pifu_name type="fullName"> <!-- type: angir type navn -->           
+				<pifu_value>Måneflekken barne- og ungdomsskole</pifu_value>
+			</pifu_name>	
+
+			<!-- Kortform -->
+			<pifu_name type="shortName"> <!-- type: angir type navn -->           
+				<pifu_value>Måneflekken</pifu_value>
+			</pifu_name>	
+
+			<!-- E-post for å kontakte organisasjonsenheten -->
+			<pifu_email type="orgEmail">info@måneflekken.skole.no</pifu_email>
+	
+			<!-- Organisasjonsenhetens url -->
+			<pifu_url type="orgURL">http://www.måneflekken.skole.no/info</pifu_url>
+
+			<!-- Telefonnummer for å kontakte organisasjonsenheten -->
+			<pifu_tel type="orgTelephone">+4773730021</pifu_tel>
+	
+			<!-- Organisasjonsenhetens faksnummer -->
+			<pifu_tel type="orgFax">+4773730022</pifu_tel>
+
+			<!-- Organisasjonens postadresse -->
+			<pifu_adr type="orgPostalAddress">
+				<adr>
+					<street>Postboks 124</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7272</pcode> <!-- postnummer -->
+				</adr>	
+			</pifu_adr>
+
+			<!-- Organisasjonens besøksadresse -->
+			<pifu_adr type="orgVisitorAddress">
+				<adr>
+					<street>Siriusbakken 3</street> <!-- gateadresse linje 1 -->
+					<locality>Måneby</locality> <!-- poststed -->
+					<pcode>7271</pcode> <!-- postnummer -->
+				</adr>	
+			</pifu_adr>		
+
+		</extension>	
+
+	</group>
+
+
+
+
+
+	<!-- Informasjon om basisgruppa 7A ved Måneflekken skole -->
+	<group> 
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om basisgruppa 7A ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_basis_Måneflekken_7A</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="1">basisgruppe</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Basisgruppe 7A ved Måneflekken skole</short> <!-- kort beskrivelse -->
+		</description>	
+		
+		<!-- Tidsperiode for gyldighet -->
+		<timeframe>
+			<begin restrict="0">2006-08-20</begin> <!-- fra-dato -->
+			<end restrict="0">2007-07-09</end> <!-- til-dato -->			
+			<adminperiod>2007/2008</adminperiod> <!-- gyldighetsperiode i lett lesbar form -->
+		</timeframe>
+		
+		<!-- E-post for å kontakte gruppa -->
+		<email>7a@måneflekken.skole.no</email>
+		
+		<!-- Gruppas url -->
+		<url>http://www.måneflekken.skole.no/klasse/7a</url>
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>
+		
+		
+	</group>
+
+	<!-- Informasjon om undervisningsgruppa i Astronomi ved Måneflekken skole -->
+	<group> 
+
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om undervisningsgruppa i Astronomi ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_gr_Astr001_Måneflekken07</id> <!-- unik og varig id -->
+		</sourcedid>
+
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="2">undervisningsgruppe</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Undervisningsgruppa i Astronomi ved Måneflekken skole</short> <!-- kort beskrivelse -->
+		</description>	
+
+		<!-- Tidsperiode for gyldighet -->
+		<timeframe>
+			<begin restrict="0">2007-01-03</begin> <!-- fra-dato -->
+			<end restrict="0">2007-07-09</end> <!-- til-dato -->			
+			<adminperiod>V2007</adminperiod> <!-- gyldighetsperiode i lett lesbar form -->
+		</timeframe>
+
+		<!-- E-post for å kontakte gruppa -->
+		<email>astronomi07@måneflekken.skole.no</email>
+
+		<!-- Gruppas url -->
+		<url>http://www.måneflekken.skole.no/fag/astronomi07</url>
+
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>
+
+
+	</group>
+	
+	<!-- Informasjon om kontaktlærergruppa til Janne Stor ved Måneflekken skole -->
+	<group> 
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om kontaktlærergruppa til Janne Stor ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_kontl_Måneflekken_jannest</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="3">kontaktlærergruppe</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Kontaktlærergruppa til Janne Stor ved Måneflekken skole</short> <!-- kort beskrivelse -->
+		</description>	
+		
+		<!-- Tidsperiode for gyldighet -->
+		<timeframe>
+			<begin restrict="0">2006-08-20</begin> <!-- fra-dato -->
+			<end restrict="0">2007-07-09</end> <!-- til-dato -->			
+			<adminperiod>2006/2007</adminperiod> <!-- gyldighetsperiode i lett lesbar form -->
+		</timeframe>
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>
+		
+		
+	</group>
+
+	<!-- Informasjon om trinn 7 ved Måneflekken skole -->
+	<group>
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om trinn 7 ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_trinn_måneflekken_7</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="4">trinn</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Måneflekken trinn 7</short> <!-- kort beskrivelse -->
+		</description>	
+		
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>		
+		
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!-- Kortform av Grep-kode for fag -->
+			<pifu_id type="grepCodeShortForm"> <!-- type: angir type id -->
+				<pifu_value>7. årstrinn</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Grep-kode for fag -->
+			<pifu_id type="grepCode"> <!-- type: angir type id -->
+				<pifu_value>http://psi.udir.no/laereplan/aarstrinn/aarstrinn7</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>		
+			
+		</extension>	
+		
+	</group>
+	
+	<!-- Informasjon om utdanningsprogram ved Måneflekken skole -->
+	<!-- Er tatt med her for eksemplets skyld, selv om dette bare finnes på vgo-skoler -->
+	<group>
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om utdanningsprogrammet studiespesialisering ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_utdp_måneflekken_st</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="5">utdanningsprogram</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Måneflekken Studiespesialisering</short> <!-- kort beskrivelse -->
+		</description>	
+		
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>		
+		
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!-- Kortform av Grep-kode for fag -->
+			<pifu_id type="grepCodeShortForm"> <!-- type: angir type id -->
+				<pifu_value>ST</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Grep-kode for fag -->
+			<pifu_id type="grepCode"> <!-- type: angir type id -->
+				<pifu_value>http://psi.udir.no/ontologi/utdanningsprogram/studiespesialisering</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>		
+			
+		</extension>	
+		
+	</group>
+	
+	<!-- Informasjon om programområde ved Måneflekken skole -->
+	<!-- Er tatt med her for eksemplets skyld, selv om dette bare finnes på vgo-skoler -->
+	<group>
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om programområdet realfag2 ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_prgo_måneflekken_strea2</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="6">programområde</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Måneflekken Realfag 2</short> <!-- kort beskrivelse -->
+		</description>	
+		
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>		
+		
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!-- Kortform av Grep-kode for fag -->
+			<pifu_id type="grepCodeShortForm"> <!-- type: angir type id -->
+				<pifu_value>STREA2----</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Grep-kode for fag -->
+			<pifu_id type="grepCode"> <!-- type: angir type id -->
+				<pifu_value>uuid:81d3b889-16c8-4b0a-81af-d0832fbcb219</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>		
+			
+		</extension>	
+		
+	</group>
+	
+	
+	<!-- Informasjon om faget Astronomi -->
+	<group>
+		
+		<!-- Kommentar om gruppe -->
+		<comments lang="no">Informasjon om faget Astronomi</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		
+		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Type gruppe -->
+		<grouptype>
+			<scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+			<typevalue level="7">fag</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+		</grouptype>
+		
+		<!-- Beskrivelse -->
+		<description>
+			<short>Astr001_Vår2007</short> <!-- kort beskrivelse -->
+			<long>2-timers valgfag i 7. klasse. Her lærer vi om solsystemer og planeter. Ingen forkunnskaper nødvendig.</long> <!-- lang beskrivelse -->
+			<full>Astronomi - et valgfag for elever på 7. årstrinn i vårsemesteret. Tema: en kort innføring i solsystemer og planter. Særlig fokus er det på vårt eget solsystem og på bla bla bla bla bla.... Vurderingsform: mappevurdering. I tillegg kan elevene trekkes ut til muntlig eksamen. Det gis tallkarakterer. </full> <!-- full beskrivelse -->
+		</description>	
+		
+		
+		<!-- Relasjon til Måneflekken skole -->
+		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
+			<!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_org_17</id> <!-- unik og varig id -->
+			</sourcedid>
+			<label>Måneflekken skole</label>
+		</relationship>		
+		
+		<!-- Utvidelser -->
+		<extension>
+			
+			<!-- Kortform av Grep-kode for fag -->
+			<pifu_id type="grepCodeShortForm"> <!-- type: angir type id -->
+				<pifu_value>NAT007</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Grep-kode for fag -->
+			<pifu_id type="grepCode"> <!-- type: angir type id -->
+				<pifu_value> uuid:7a8f9388-6d80-40d9-a078-7883dccbf693</pifu_value>
+				<pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>		
+			
+		</extension>	
+		
+	</group>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	<!-- Membership                                                            -->
+	<!-- ===================================================================== -->
+	<!-- ===================================================================== -->
+	
+	<!-- Informasjon om tilhørighet til organisasjonsenheten Måne kommune -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap i Måne kommune</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_org_2</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i Måne kommune</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<!-- Janne er lærer, og det er hovedrollen ved knytningen til organisasjonen -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2003-07-22</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				<extension>
+					
+					<!-- Om relasjonen er primær -->
+					<pifu_primaryRelation>1</pifu_primaryRelation>
+					
+				</extension>
+			</role>
+			
+			<!-- Medlemmets rolle i gruppa --> 
+			<!-- Men Janne er også elev ved en skole, la oss si voksenopplæring i spansk (ikke modellert i denne xmlen-->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2007-01-03</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+			</role>
+			
+		</member>		
+		
+	</membership>
+	
+	
+	<!-- Informasjon om tilhørighet til organisasjonsenheten Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap i Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_org_17</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i Måneflekken skole</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2003-07-22</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Utvidelser -->
+				<extension>
+					
+					<!-- Om relasjonen er primær -->
+					<pifu_primaryRelation>1</pifu_primaryRelation>
+					
+				</extension>				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i Måneflekken skole</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2000-08-09</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- System som initierer dataoverføring -->
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+
+	<!-- Informasjon om medlemskap til basisgruppa 7A ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til basisgruppa 7A ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_basis_Måneflekken_7A</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i basisgruppa</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er lærer i basisgruppa 7A</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2007-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i basisgruppa</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+
+			</role>
+			
+		</member>
+		
+	</membership>
+	
+
+	<!-- Informasjon om medlemskap til undervisningsgruppa Astronomi ved Måneflekken skole -->
+	<membership>
+
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til undervisningsgruppa i Astronomi ved Måneflekken skole</comments>
+	
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_gr_Astr001_Måneflekken07</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i undervisningsgruppa</comments>
+
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for undervisningsgruppa i Astronomi.</comments>
+				<datetime>2007-01-03</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2007-01-05</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+				<!-- Utvidelser -->
+				<extension>				
+
+					<!-- Om relasjonen er primær -->
+					<pifu_primaryRelation>1</pifu_primaryRelation>
+
+				</extension>
+			</role>
+
+		</member>		
+
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i undervisningsgruppa</comments>		
+
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<subrole>elev</subrole> <!-- subrolle -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2007-01-07</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2007-01-07</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+
+
+				<!-- Utvidelser -->
+				<extension>
+
+					<!-- Om relasjonen er primær -->
+					<pifu_primaryRelation>1</pifu_primaryRelation>
+
+				</extension>
+			</role>
+
+		</member>
+	
+	</membership>
+
+	<!-- Informasjon om medlemskap til kontaktlærergruppa til Janne Stor ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til kontaktlærergruppa til Janne Stor ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_kontl_Måneflekken_jannest</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i kontaktlærergruppa</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for kontaktlærergruppa</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i kontaktlærergruppa</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+
+	<!-- Informasjon om medlemskap til trinn 7 ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til trinn 7 ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_trinn_måneflekken_7</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i trinn 7</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for kontaktlærergruppa</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i trinn 7</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+	
+	<!-- Informasjon om medlemskap til utdanningsprogram studiespesialiserende ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til utdanningsprogram studiespesialiserende ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_utdp_måneflekken_st</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i utdanningsprogram studiespesialiserende</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for utdanningsprogram studiespesialiserende</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i utdanningsprogram studiespesialiserende</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+	
+	<!-- Informasjon om medlemskap til programområde realfag2 ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til programområde realfag2 ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_prgo_måneflekken_strea2</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i programområde realfag2</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for programområde realfag2</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i programområde realfag2</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2006-08-20</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+	
+	<!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole -->
+	<membership>
+		
+		<!-- Kommentar om medlemskap -->
+		<comments>Informasjon om medlemskap til faget astronomi ved Måneflekken skole</comments>
+		
+		<!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
+		<sourcedid>
+			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+			<id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+		</sourcedid>
+		
+		<!-- Medlem Janne Stor -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Janne Stor sitt medlemskap i faget astronomi</comments>
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01235</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="02"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<comments>Janne Stor er ansvarlig for faget astronomi</comments>
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2007-01-05</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>			
+				
+			</role>
+			
+		</member>		
+		
+		<!-- Medlem Ola Nordmann -->
+		<member>
+			<!-- Kommentar om medlem -->
+			<comments>Ola Nordmann sitt medlemskap i faget astronomi</comments>		
+			
+			<!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
+			<sourcedid>
+				<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
+				<id>global_ID_01236</id> <!-- unik og varig id -->
+			</sourcedid>
+			
+			<!-- Om medlem er person eller gruppe -->
+			<idtype>1</idtype> <!-- 1-person, 2-group -->
+			
+			<!-- Medlemmets rolle i gruppa -->
+			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+				<datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
+				
+				<!-- Tidsperiode for gyldighet -->
+				<timeframe>
+					<begin>2007-01-05</begin> <!-- fra-dato -->
+					<end>2007-06-30</end> <!-- til-dato -->
+				</timeframe>
+				
+			</role>
+			
+		</member>
+		
+	</membership>
+	
+
+</enterprise>

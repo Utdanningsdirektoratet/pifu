@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2013-01-31"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+	<!-- Typedefinisjoner. Alle IMS-elementer skal være en av disse typene -->
+	<xs:simpleType name="t_string1">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string4">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string8">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string16">
+		<!-- Ikke i lista over typer, men brukt i tabellene -->
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string32">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string60">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string64">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string128">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string256">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string1024">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1024"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_string2048">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2048"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_integer1">
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_integer2">
+		<!-- PIFU-IMS-utvidelse -->
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_decimal8p4">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="9999.9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_datetime">
+		<!-- IMS datetime tillater både datetime og date  -->
+		<xs:union memberTypes="xs:date xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_date">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<xs:simpleType name="t_url">
+		<!-- Ikke i lista over typer, men brukes i tabellene -->
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value="[a-z]+://.+"/>
+			<!-- Sjekker format xxxx://yyyyy -->
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<!-- Felles dataelementer -->
+
+	<!-- comments - String2048 -->
+	<xs:complexType name="comments">
+		<xs:simpleContent>
+			<xs:extension base="t_string2048">
+				<xs:attribute name="lang" type="lang"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="comments" type="comments"/>
+
+	<!-- lang - String128, Verdier fra ISO639-1, ISO639-2, ISO639-3 -->
+	<xs:simpleType name="lang">
+		<xs:restriction base="t_string128"/>
+	</xs:simpleType>
+
+	<!-- datasource - String 256 -->
+	<xs:complexType name="datasource">
+		<xs:simpleContent>
+			<xs:extension base="t_string256"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="datasource" type="datasource"/>
+
+	<!-- datetime - DateTime, fra ISO8601 -->
+	<xs:complexType name="datetime">
+		<xs:simpleContent>
+			<xs:extension base="t_datetime"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="datetime" type="datetime"/>
+
+	<!-- recstatus - integer1, 1=add, 2=update, 2=delete -->
+	<!-- benyttes ikke i fulle uttrekk -->
+	<xs:simpleType name="recstatus">
+		<xs:restriction base="t_integer1">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- sourcedid - identifikatorer -->
+	<xs:complexType name="sourcedid">
+		<xs:sequence>
+			<xs:element name="source">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="t_string32"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="id">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="t_string256"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="sourcedidtype">
+			<xs:simpleType>
+				<xs:restriction base="t_string16">
+					<xs:enumeration value="Duplicate"/>
+					<xs:enumeration value="Old"/>
+					<xs:enumeration value="New"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="sourcedid" type="sourcedid"/>
+
+	<!-- email - string256 -->
+	<xs:simpleType name="email">
+		<xs:restriction base="t_string256">
+			<xs:pattern value=".+@.+(\..+)+"/>
+			<!-- Lagt inn sjekk på 'noe@noe(.noe)+  -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="email" type="email"/>
+
+	<!-- url - url-type -->
+	<xs:simpleType name="url">
+		<xs:restriction base="t_url"/>
+	</xs:simpleType>
+	<xs:element name="url" type="url"/>
+
+	<!-- userid - forskjellige brukerider -->
+	<xs:complexType name="userid">
+		<xs:simpleContent>
+			<xs:extension base="t_string256">
+				<xs:attribute name="useridtype" type="useridtype" use="required"/>
+				<xs:attribute name="password" type="t_string1024"/>
+				<xs:attribute name="pwencryptiontype" type="t_string32"/>
+				<xs:attribute name="authenticationtype" type="t_string32"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="useridtype">
+		<xs:restriction base="t_string32">
+			<xs:enumeration value="personNIN"/>
+			<!-- typer userid brukt i PIFU-IMS -->
+			<xs:enumeration value="studentID"/>
+			<xs:enumeration value="workforceID"/>
+			<xs:enumeration value="username"/>
+			<xs:enumeration value="sisID"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="userid" type="userid"/>
+
+	<!-- timeframe -->
+	<xs:complexType name="timeframe">
+		<xs:sequence>
+			<xs:element name="begin" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="t_date">
+							<xs:attribute name="restrict" type="t_integer1"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="end" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="t_date">
+							<xs:attribute name="restrict" type="t_integer1"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="adminperiod" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string32">
+						<!-- PIFU-IMS begrenser denne til en av <år>, V<år>, H<år>, og de samme med / mellom -->
+						<!-- eks 2010, H2010, V2011, 2010/2011, H2010/V2011... og for så vidt V2011/H2010, men... -->
+						<xs:pattern value="[VH]*\d{4}(|/[VH]*\d{4})"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="timeframe" type="timeframe"/>
+
+
+
+	<!-- Enterprisedokumentet -->
+	<xs:complexType name="enterprise">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="properties"/>
+			<xs:element ref="person" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="group" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="membership" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="enterprise" type="enterprise"/>
+
+
+	<!-- Properties - metadata for uttrekket -->
+	<xs:complexType name="properties">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="datasource"/>
+			<xs:element name="target" type="t_string256" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- target - samme som struktur som datasource -->
+			<xs:element name="type">
+				<xs:simpleType>
+					<xs:restriction base="t_string32">
+						<!-- IMS-PIFU benytter disse verdiene -->
+						<xs:enumeration value="full"/>
+						<xs:enumeration value="delta"/>
+						<xs:enumeration value="event"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="datetime"/>
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="lang" use="required"/>
+	</xs:complexType>
+	<xs:element name="properties" type="properties"/>
+
+
+	<!-- person - personobjekter -->
+	<xs:complexType name="person">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="sourcedid" maxOccurs="unbounded"/>
+			<xs:element ref="userid" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element ref="name"/>
+			<xs:element ref="demographics" minOccurs="0"/>
+			<xs:element ref="email" minOccurs="0"/>
+			<xs:element ref="url" minOccurs="0"/>
+			<xs:element ref="tel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="adr" minOccurs="0"/>
+			<xs:element ref="photo" minOccurs="0"/>
+			<!--	PIFU-IMS benytter ikke disse ennå		
+				<xs:element ref="systemrole" minOccurs="0"/>
+				<xs:element ref="institutionrole" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="datasource" minOccurs="0"/>
+			-->
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="recstatus" type="recstatus"/>
+		<!-- benyttes ikke når type uttrekk er full -->
+	</xs:complexType>
+	<xs:element name="person" type="person"/>
+
+	<!-- name - Navnestruktur -->
+	<xs:complexType name="name">
+		<xs:sequence>
+			<xs:element name="fn" type="t_string256"/>
+			<!--	Benyttes ikke i dette uttrekket		
+				<xs:element ref="sort" minOccurs="0"/>
+				<xs:element ref="nickname" minOccurs="0"/>
+			-->
+			<xs:element name="n">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="family" type="t_string256" minOccurs="1"/>
+						<xs:element name="given" type="t_string256" minOccurs="1"/>
+						<!--	Benyttes ikke i dette uttrekket 		
+							<xs:element ref="other" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="prefix" minOccurs="0"/>
+							<xs:element ref="suffix" minOccurs="0"/>
+							<xs:element ref="partname" minOccurs="0" maxOccurs="unbounded"/>
+						-->
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="name" type="name"/>
+
+
+	<!-- Benyttes ikke i dette uttrekket
+		<xs:complexType name="sort" mixed="true"/>
+		<xs:element name="sort" type="sort"/>
+		<xs:complexType name="nickname" mixed="true"/>
+		<xs:element name="nickname" type="nickname"/>
+
+	    <xs:complexType name="other" mixed="true"/>
+		<xs:element name="other" type="other"/>
+		<xs:complexType name="prefix" mixed="true"/>
+		<xs:element name="prefix" type="prefix"/>
+		<xs:complexType name="suffix" mixed="true"/>
+		<xs:element name="suffix" type="suffix"/>
+		<xs:complexType name="partname" mixed="true">
+		<xs:attribute name="lang" type="xs:anySimpleType"/>
+		<xs:attribute name="partnametype" use="required" type="xs:anySimpleType"/>
+		</xs:complexType>
+		<xs:element name="partname" type="partname"/>
+	-->
+
+	<!-- demographics  -->
+	<xs:complexType name="demographics">
+		<xs:sequence>
+			<xs:element name="gender" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string1">
+						<xs:enumeration value="0"/>
+						<!-- 0=Unknown -->
+						<xs:enumeration value="1"/>
+						<!-- 1=Female -->
+						<xs:enumeration value="2"/>
+						<!-- 2=Male -->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bday" type="t_date" minOccurs="0"/>
+			<!--<xs:element ref="disability" minOccurs="0" maxOccurs="unbounded"/>-->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="demographics" type="demographics"/>
+	<!--	<xs:complexType name="disability" mixed="true"/>
+	<xs:element name="disability" type="disability"/>-->
+
+
+	<!-- tel - Telefonnummer på internasjonalt format (Må starte med +)-->
+	<!-- Dette er standardverdien i IMS-E, PIFU-IMS har utvidelser lenger ned i extension-delen -->
+	<xs:complexType name="tel">
+		<xs:simpleContent>
+			<xs:extension base="t_tel">
+				<xs:attribute name="teltype" use="required">
+					<xs:simpleType>
+						<xs:restriction base="t_string8">
+							<!-- Fjerna Pager og bokstavverdier i forhold til standard IMS-E  for å gjøre mindre valgfrihet-->
+							<xs:enumeration value="1"/>
+							<!-- Voice -->
+							<xs:enumeration value="2"/>
+							<!-- Fax -->
+							<xs:enumeration value="3"/>
+							<!-- Mobile -->
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="t_tel">
+		<xs:restriction base="t_string32">
+			<xs:pattern value="\+[\d]+"/>
+			<!--  Telefonnummer må starte med +, så tall -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="tel" type="tel"/>
+
+
+	<!-- adr - Adressestrukturer -->
+	<xs:complexType name="adr">
+		<xs:sequence>
+			<xs:element name="pobox" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string32"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="extadd" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string128"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="street" minOccurs="0" maxOccurs="3">
+				<xs:simpleType>
+					<xs:restriction base="t_string128"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locality" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string64"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="region" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string64"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="pcode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string32"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="country" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string64"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="adr" type="adr"/>
+
+	<!-- photo - Referanse til et bilde -->
+	<xs:complexType name="photo">
+		<xs:sequence>
+			<xs:element name="extref">
+				<xs:simpleType>
+					<xs:restriction base="t_string1024"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="imgtype" type="t_string32"/>
+	</xs:complexType>
+
+	<xs:element name="photo" type="photo"/>
+
+
+	<!--	Benyttes ikke i PIFU-IMS ennå
+		<xs:complexType name="systemrole">
+		<xs:attribute name="systemroletype" use="required">
+		<xs:simpleType>
+		<xs:restriction base="xs:NMTOKEN">
+		<xs:enumeration value="SysAdmin"/>
+		<xs:enumeration value="AccountAdmin"/>
+		<xs:enumeration value="None"/>
+		<xs:enumeration value="User"/>
+		<xs:enumeration value="SysSupport"/>
+		<xs:enumeration value="Creator"/>
+		</xs:restriction>
+		</xs:simpleType>
+		</xs:attribute>
+		</xs:complexType>
+		<xs:element name="systemrole" type="systemrole"/>
+		<xs:complexType name="institutionrole">
+		<xs:attribute name="primaryrole" use="required">
+		<xs:simpleType>
+		<xs:restriction base="xs:NMTOKEN">
+		<xs:enumeration value="Yes"/>
+		<xs:enumeration value="No"/>
+		</xs:restriction>
+		</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="institutionroletype" use="required">
+		<xs:simpleType>
+		<xs:restriction base="xs:NMTOKEN">
+		<xs:enumeration value="ProspectiveStudent"/>
+		<xs:enumeration value="Observer"/>
+		<xs:enumeration value="Guest"/>
+		<xs:enumeration value="Staff"/>
+		<xs:enumeration value="Other"/>
+		<xs:enumeration value="Administrator"/>
+		<xs:enumeration value="Student"/>
+		<xs:enumeration value="Alumni"/>
+		<xs:enumeration value="Faculty"/>
+		</xs:restriction>
+		</xs:simpleType>
+		</xs:attribute>
+		</xs:complexType>
+		<xs:element name="institutionrole" type="institutionrole"/>
+	-->
+
+
+	<!-- group - Grupper -->
+	<xs:complexType name="group">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="sourcedid" maxOccurs="unbounded"/>
+			<xs:element ref="grouptype" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element ref="description"/>
+			<!--			<xs:element ref="org" minOccurs="0"/>-->
+			<!-- Benyttes ikke i PIFU-IMS ennå -->
+			<xs:element ref="timeframe" minOccurs="0"/>
+			<!--			<xs:element ref="enrollcontrol" minOccurs="0"/>-->
+			<!-- Benyttes ikke i PIFU-IMS ennå -->
+			<xs:element ref="email" minOccurs="0"/>
+			<xs:element ref="url" minOccurs="0"/>
+			<xs:element ref="relationship" maxOccurs="unbounded"/>
+			<!--<xs:element ref="datasource" minOccurs="0"/>-->
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="recstatus" type="recstatus"/>
+		<!-- Benyttes ikke i full -->
+	</xs:complexType>
+	<xs:element name="group" type="group"/>
+
+
+	<xs:complexType name="grouptype">
+		<xs:sequence>
+			<xs:element name="scheme">
+				<xs:simpleType>
+					<xs:restriction base="t_string256">
+						<xs:enumeration value="pifu-ims-go-org"/>
+						<!-- Eneste gyldige verdier i PIFU-IMS ennå -->
+						<xs:enumeration value="pifu-ims-go-grp"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="typevalue">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="t_groupschematypevalue">
+							<xs:attribute name="level" use="required" type="t_string2"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="grouptype" type="grouptype"/>
+
+	<!-- Verdiene i PIFU-IMS -->
+	<xs:simpleType name="t_groupschematypevalue">
+		<xs:restriction base="t_string256">
+			<!-- Sjekk -->
+			<xs:enumeration value="skoleeier"/>
+			<xs:enumeration value="skole"/>
+			<xs:enumeration value="basisgruppe"/>
+			<xs:enumeration value="undervisningsgruppe"/>
+			<xs:enumeration value="kontaktlærergruppe"/>
+			<xs:enumeration value="trinn"/>
+			<xs:enumeration value="utdanningsprogram"/>
+			<xs:enumeration value="programområde"/>
+			<xs:enumeration value="fag"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- description - gruppebeskrivelse -->
+	<xs:complexType name="description">
+		<xs:sequence>
+			<xs:element name="short" type="t_string60"/>
+			<xs:element name="long" type="t_string256" minOccurs="0"/>
+			<xs:element name="full" type="t_string2048" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="description" type="description"/>
+
+
+	<!-- Brukes ikke i PIFU-IMS ennå
+		<xs:complexType name="org">
+		<xs:sequence>
+		<xs:element ref="orgname" minOccurs="0"/>
+		<xs:element ref="orgunit" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element ref="type" minOccurs="0"/>
+		<xs:element ref="id" minOccurs="0"/>
+		</xs:sequence>
+		</xs:complexType>
+		<xs:element name="org" type="org"/>
+		<xs:complexType name="orgname" mixed="true"/>
+		<xs:element name="orgname" type="orgname"/>
+		<xs:complexType name="orgunit" mixed="true"/>
+		<xs:element name="orgunit" type="orgunit"/>
+	
+		<xs:complexType name="enrollcontrol">
+		<xs:sequence>
+		<xs:element ref="enrollaccept" minOccurs="0"/>
+		<xs:element ref="enrollallowed" minOccurs="0"/>
+		</xs:sequence>
+		</xs:complexType>
+		<xs:element name="enrollcontrol" type="enrollcontrol"/>
+		<xs:complexType name="enrollaccept" mixed="true"/>
+		<xs:element name="enrollaccept" type="enrollaccept"/>
+		<xs:complexType name="enrollallowed" mixed="true"/>
+		<xs:element name="enrollallowed" type="enrollallowed"/>
+	-->
+
+	<!-- relationship - relasjon mellom grupper -->
+	<!-- Alle skal ha minst en forbindelse, inkl toppnoden som peker på seg selv -->
+	<xs:complexType name="relationship">
+		<xs:sequence>
+			<xs:element ref="sourcedid"/>
+			<xs:element name="label" type="t_string128"/>
+		</xs:sequence>
+		<xs:attribute name="relation">
+			<xs:simpleType>
+				<xs:restriction base="t_string8">
+					<xs:enumeration value="1"/>
+					<!-- parent -->
+					<!-- <xs:enumeration value="2"/>-->
+					<!-- child - ikke brukt i PIFU-IMS. Bruker bare enveispeking -->
+					<xs:enumeration value="3"/>
+					<!-- Also known as -->
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="relationship" type="relationship"/>
+
+
+
+	<!-- membership - medlemskap i grupper-->
+	<xs:complexType name="membership">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="sourcedid"/>
+			<xs:element ref="member" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="membership" type="membership"/>
+
+	<!-- member - medlemmet i et membership -->
+	<xs:complexType name="member">
+		<xs:sequence>
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="sourcedid"/>
+			<xs:element name="idtype">
+				<xs:simpleType>
+					<xs:restriction base="t_integer1">
+						<xs:enumeration value="1"/>
+						<!-- person -->
+						<!--<xs:enumeration value="2"/>-->
+						<!-- group  Ikke brukt i PIFU-IMS ennå-->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="role" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="member" type="member"/>
+
+	<!-- role - rolle i member -->
+	<xs:complexType name="role">
+		<xs:sequence>
+			<xs:element name="subrole" type="t_string32" minOccurs="0"/>
+			<xs:element name="status">
+				<xs:simpleType>
+					<xs:restriction base="t_integer1">
+						<xs:enumeration value="0"/>
+						<!-- Inactive -->
+						<xs:enumeration value="1"/>
+						<!-- Active -->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<!--<xs:element ref="userid" minOccurs="0"/> -->
+			<!-- Brukes ikke i PIFU-IMS ennå -->
+			<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="datetime" minOccurs="0"/>
+			<xs:element ref="timeframe" minOccurs="0"/>
+			<!-- brukes ikke i PIFU-IMS ennå
+				<xs:element ref="interimresult" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="finalresult" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="email" minOccurs="0"/>
+				<xs:element ref="datasource" minOccurs="0"/>-->
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="recstatus" type="recstatus"/>
+
+		<xs:attribute name="roletype">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="01"/>
+					<!-- Learner -->
+					<xs:enumeration value="02"/>
+					<!-- Instructor -->
+					<xs:enumeration value="03"/>
+					<!-- Conetent Developer -->
+					<xs:enumeration value="04"/>
+					<!-- Member -->
+					<xs:enumeration value="05"/>
+					<!-- Manager -->
+					<xs:enumeration value="06"/>
+					<!-- Mentor -->
+					<xs:enumeration value="07"/>
+					<!-- Administrator -->
+					<xs:enumeration value="08"/>
+					<!-- Teaching assistant -->
+					<!--				Brukes ikke i PIFU-IMS	
+					<xs:enumeration value="Administrator"/>
+					<xs:enumeration value="ContentDeveloper"/>
+					<xs:enumeration value="Manager"/>
+					<xs:enumeration value="TeachingAssistant"/>
+					<xs:enumeration value="Mentor"/>
+					<xs:enumeration value="Member"/>
+					<xs:enumeration value="Instructor"/>
+					<xs:enumeration value="Learner"/>-->
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="role" type="role"/>
+
+	<!-- Brukes ikke i PIFU-IMS ennå
+		<xs:complexType name="finalresult">
+		<xs:sequence>
+		<xs:element ref="mode" minOccurs="0"/>
+		<xs:element ref="values" minOccurs="0"/>
+		<xs:element ref="result" minOccurs="0"/>
+		<xs:element ref="comments" minOccurs="0"/>
+		</xs:sequence>
+		</xs:complexType>
+		<xs:element name="finalresult" type="finalresult"/>
+		<xs:complexType name="interimresult">
+		<xs:sequence>
+		<xs:element ref="mode" minOccurs="0"/>
+		<xs:element ref="values" minOccurs="0"/>
+		<xs:element ref="result" minOccurs="0"/>
+		<xs:element ref="comments" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="resulttype" type="xs:anySimpleType"/>
+		</xs:complexType>
+		<xs:element name="interimresult" type="interimresult"/>
+		<xs:complexType name="mode" mixed="true"/>
+		<xs:element name="mode" type="mode"/>
+		<xs:complexType name="values">
+		<xs:sequence>
+		<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element ref="min" minOccurs="0"/>
+		<xs:element ref="max" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="valuetype" use="required">
+		<xs:simpleType>
+		<xs:restriction base="xs:NMTOKEN">
+		<xs:enumeration value="0"/>
+		<xs:enumeration value="1"/>
+		</xs:restriction>
+		</xs:simpleType>
+		</xs:attribute>
+		</xs:complexType>
+		<xs:element name="values" type="values"/>
+		<xs:complexType name="list" mixed="true"/>
+		<xs:element name="list" type="list"/>
+		<xs:complexType name="max" mixed="true"/>
+		<xs:element name="max" type="max"/>
+		<xs:complexType name="min" mixed="true"/>
+		<xs:element name="min" type="min"/>
+		<xs:complexType name="result" mixed="true"/>
+		<xs:element name="result" type="result"/>
+	-->
+
+
+
+
+	<!-- Utvidelser -->
+	<xs:complexType name="extension" mixed="true">
+		<xs:sequence>
+			<xs:element ref="pifu_id" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_name" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_email" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_url" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_tel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_adr" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_status" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_preferredLanguage" minOccurs="0"/>
+			<xs:element ref="pifu_nativeTongue" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_hasContactPerson" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_primaryRelation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="extension" type="extension"/>
+
+
+
+
+	<!-- PIFU-IMS-utvidelser for denne eksporten -->
+
+	<!-- pifu_id - forskjellige identifikatorer -->
+	<xs:complexType name="pifu_id">
+		<xs:sequence>
+			<xs:element ref="pifu_value"/>
+			<xs:element ref="pifu_scope"/>
+			<xs:element ref="pifu_unique"/>
+		</xs:sequence>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="organizationNumber"/>
+					<xs:enumeration value="vigoNumber"/>
+					<xs:enumeration value="domainName"/>
+					<xs:enumeration value="grepCode"/>
+					<xs:enumeration value="grepCodeShortForm"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pifu_id" type="pifu_id"/>
+
+	<xs:simpleType name="pifu_value">
+		<xs:restriction base="t_string256"/>
+	</xs:simpleType>
+	<xs:element name="pifu_value" type="pifu_value"/>
+
+	<xs:simpleType name="pifu_scope">
+		<xs:restriction base="t_string256"/>
+	</xs:simpleType>
+	<xs:element name="pifu_scope" type="pifu_scope"/>
+
+	<xs:simpleType name="pifu_unique">
+		<xs:restriction base="t_integer1">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="pifu_unique" type="pifu_unique"/>
+
+
+
+
+
+
+
+	<!-- pifu_name - forskjellige navn på objektene-->
+	<xs:complexType name="pifu_name">
+		<xs:sequence>
+			<xs:element ref="pifu_value"/>
+			<xs:element ref="pifu_language" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="legalName"/>
+					<xs:enumeration value="name"/>
+					<xs:enumeration value="fullName"/>
+					<xs:enumeration value="shortName"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pifu_name" type="pifu_name"/>
+
+	<xs:complexType name="pifu_language">
+		<xs:simpleContent>
+			<xs:extension base="lang">
+				<xs:attribute name="source" use="required">
+					<xs:simpleType>
+						<xs:restriction base="t_string32">
+							<xs:enumeration value="ISO 639-1"/>
+							<xs:enumeration value="ISO 639-2"/>
+							<xs:enumeration value="ISO 639-2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="pifu_language" type="pifu_language"/>
+
+
+	<!-- pifu_email - epostadresser av forskjellige typer -->
+	<xs:complexType name="pifu_email">
+		<xs:simpleContent>
+			<xs:extension base="t_string256">
+				<xs:attribute name="type">
+					<xs:simpleType>
+						<xs:restriction base="t_string32">
+							<xs:enumeration value="personEmailPrivate"/>
+							<xs:enumeration value="personEmailAtOrg"/>
+							<xs:enumeration value="orgEmail"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="priority" type="t_integer2"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="pifu_email" type="pifu_email"/>
+
+	<!-- pifu_url - urler av forskjellige typer -->
+	<xs:complexType name="pifu_url">
+		<xs:simpleContent>
+			<xs:extension base="t_url">
+				<xs:attribute name="type">
+					<xs:simpleType>
+						<xs:restriction base="t_string32">
+							<xs:enumeration value="personURLPrivate"/>
+							<xs:enumeration value="personURLAtOrg"/>
+							<xs:enumeration value="orgURL"/>
+							<xs:enumeration value="orgIntranet"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="priority" type="t_integer2"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="pifu_url" type="pifu_url"/>
+
+
+	<!-- pifu_tel - telefonnummer av forskjellige typer -->
+	<xs:complexType name="pifu_tel">
+		<xs:simpleContent>
+			<xs:extension base="t_tel">
+				<xs:attribute name="type">
+					<xs:simpleType>
+						<xs:restriction base="t_string32">
+							<xs:enumeration value="personTelephonePrivate"/>
+							<xs:enumeration value="personMobilePrivate"/>
+							<xs:enumeration value="personTelephoneAtOrg"/>
+							<xs:enumeration value="personMobileAtOrg"/>
+							<xs:enumeration value="personFaxAtOrg"/>
+							<xs:enumeration value="personSwitchboard"/>
+							<xs:enumeration value="orgTelephone"/>
+							<xs:enumeration value="orgFax"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="priority" type="t_integer2"/>
+			</xs:extension>
+		</xs:simpleContent>
+
+	</xs:complexType>
+	<xs:element name="pifu_tel" type="pifu_tel"/>
+
+	<!-- pifu_adr - adresser av forskjellige typer -->
+	<xs:complexType name="pifu_adr" mixed="true">
+		<xs:sequence>
+			<xs:element ref="adr"/>
+			<xs:element ref="timeframe" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="personRegisteredAddressPrivate"/>
+					<xs:enumeration value="personPostalAddressPrivate"/>
+					<xs:enumeration value="personVisitorAddressAtOrg"/>
+					<xs:enumeration value="personPostalAddressAtOrg"/>
+					<xs:enumeration value="personPostalAddressHoliday"/>
+					<xs:enumeration value="orgPostalAddress"/>
+					<xs:enumeration value="orgVisitorAddress"/>
+					<xs:enumeration value="orgDeliveryAddress"/>
+					<xs:enumeration value="orgBillingAddress"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="priority">
+			<xs:simpleType>
+				<xs:restriction base="t_integer2"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pifu_adr" type="pifu_adr"/>
+
+	<xs:complexType name="pifu_status">
+		<xs:simpleContent>
+			<xs:extension base="pifu_status_values">
+				<xs:attribute name="type">
+					<xs:simpleType>
+						<xs:restriction base="t_string32">
+							<xs:enumeration value="activeInactive"/>
+							<xs:enumeration value="pupilStatus"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="pifu_status" type="pifu_status"/>
+	<!-- Gyldige verdiner i PIFU-IMS nå -->
+	<xs:simpleType name="pifu_status_values">
+		<xs:restriction base="t_string32">
+			<xs:enumeration value="aktiv"/>
+			<xs:enumeration value="inaktiv"/>
+			<xs:enumeration value="heltid"/>
+			<xs:enumeration value="deltid"/>
+			<xs:enumeration value="norsk-utv-i-utlandet"/>
+			<xs:enumeration value="utenlandsk-utv-i-norge"/>
+			<xs:enumeration value="voksen"/>
+			<xs:enumeration value="privatist"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<!-- pifu_preferredLanguage - foretrukket språkform -->
+	<xs:element name="pifu_preferredLanguage" type="pifu_language"/>
+
+	<!-- pifu_nativeTongue - morsmål -->
+	<xs:element name="pifu_nativeTongue" type="pifu_language"/>
+
+
+	<!-- pifu_hasContactPerson - Kontaktpersoner på personobjekter-->
+	<xs:complexType name="pifu_hasContactPerson">
+		<xs:sequence>
+			<xs:element ref="sourcedid"/>
+		</xs:sequence>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="nextOfKin"/>
+					<xs:enumeration value="guardian"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pifu_hasContactPerson" type="pifu_hasContactPerson"/>
+
+	<!-- pifu_primaryRelation - Om relasjonen er hovedrelasjon mellom person og gruppe-->
+	<xs:simpleType name="pifu_primaryRelation">
+		<xs:restriction base="t_integer1">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="pifu_primaryRelation" type="pifu_primaryRelation"/>
+</xs:schema>
