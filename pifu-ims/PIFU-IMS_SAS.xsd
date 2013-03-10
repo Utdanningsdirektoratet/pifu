@@ -690,9 +690,9 @@
 			<xs:element ref="comments" minOccurs="0"/>
 			<xs:element ref="datetime" minOccurs="0"/>
 			<xs:element ref="timeframe" minOccurs="0"/>
+			<xs:element ref="interimresult" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="finalresult" minOccurs="0" maxOccurs="unbounded"/>
 			<!-- brukes ikke i PIFU-IMS ennå
-				<xs:element ref="interimresult" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="finalresult" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="email" minOccurs="0"/>
 				<xs:element ref="datasource" minOccurs="0"/>-->
 			<xs:element ref="extension" minOccurs="0"/>
@@ -733,53 +733,56 @@
 	</xs:complexType>
 	<xs:element name="role" type="role"/>
 
-	<!-- Brukes ikke i PIFU-IMS ennå
-		<xs:complexType name="finalresult">
+	<!-- Resultater og karakterer. 
+		 Foreløpig er denne uten norske tilpasninger/begrensninger
+		 i forhold til hva som er lovlige verdier
+	-->
+	<xs:complexType name="finalresult">
 		<xs:sequence>
-		<xs:element ref="mode" minOccurs="0"/>
-		<xs:element ref="values" minOccurs="0"/>
-		<xs:element ref="result" minOccurs="0"/>
-		<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="mode" minOccurs="0"/>
+			<xs:element ref="values" minOccurs="0"/>
+			<xs:element ref="result" minOccurs="0"/>
+			<xs:element ref="comments" minOccurs="0"/>
 		</xs:sequence>
-		</xs:complexType>
-		<xs:element name="finalresult" type="finalresult"/>
-		<xs:complexType name="interimresult">
+	</xs:complexType>
+	<xs:element name="finalresult" type="finalresult"/>
+	<xs:complexType name="interimresult">
 		<xs:sequence>
-		<xs:element ref="mode" minOccurs="0"/>
-		<xs:element ref="values" minOccurs="0"/>
-		<xs:element ref="result" minOccurs="0"/>
-		<xs:element ref="comments" minOccurs="0"/>
+			<xs:element ref="mode" minOccurs="0"/>
+			<xs:element ref="values" minOccurs="0"/>
+			<xs:element ref="result" minOccurs="0"/>
+			<xs:element ref="comments" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="resulttype" type="xs:anySimpleType"/>
-		</xs:complexType>
-		<xs:element name="interimresult" type="interimresult"/>
-		<xs:complexType name="mode" mixed="true"/>
-		<xs:element name="mode" type="mode"/>
-		<xs:complexType name="values">
+	</xs:complexType>
+	<xs:element name="interimresult" type="interimresult"/>
+	<xs:complexType name="mode" mixed="true"/>
+	<xs:element name="mode" type="mode"/>
+	<xs:complexType name="values">
 		<xs:sequence>
-		<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
-		<xs:element ref="min" minOccurs="0"/>
-		<xs:element ref="max" minOccurs="0"/>
+			<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="min" minOccurs="0"/>
+			<xs:element ref="max" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="valuetype" use="required">
-		<xs:simpleType>
-		<xs:restriction base="xs:NMTOKEN">
-		<xs:enumeration value="0"/>
-		<xs:enumeration value="1"/>
-		</xs:restriction>
-		</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
 		</xs:attribute>
-		</xs:complexType>
-		<xs:element name="values" type="values"/>
-		<xs:complexType name="list" mixed="true"/>
-		<xs:element name="list" type="list"/>
-		<xs:complexType name="max" mixed="true"/>
-		<xs:element name="max" type="max"/>
-		<xs:complexType name="min" mixed="true"/>
-		<xs:element name="min" type="min"/>
-		<xs:complexType name="result" mixed="true"/>
-		<xs:element name="result" type="result"/>
-	-->
+	</xs:complexType>
+	<xs:element name="values" type="values"/>
+	<xs:complexType name="list" mixed="true"/>
+	<xs:element name="list" type="list"/>
+	<xs:complexType name="max" mixed="true"/>
+	<xs:element name="max" type="max"/>
+	<xs:complexType name="min" mixed="true"/>
+	<xs:element name="min" type="min"/>
+	<xs:complexType name="result" mixed="true"/>
+	<xs:element name="result" type="result"/>
+
 
 
 
