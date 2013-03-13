@@ -135,7 +135,7 @@
 	</xs:complexType>
 	<xs:element name="datetime" type="datetime"/>
 
-	<!-- recstatus - integer1, 1=add, 2=update, 2=delete -->
+	<!-- recstatus - integer1, 1=add, 2=update, 3=delete -->
 	<!-- benyttes ikke i fulle uttrekk -->
 	<xs:simpleType name="recstatus">
 		<xs:restriction base="t_integer1">
