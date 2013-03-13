@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Senter for IKT i utdanningen -->
+<!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
+
+<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- der mottakersystemet allerede har identifikatorene til personer og grupper           -->
+<!-- Vi kan derfor gjøre en minimalistisk overføring med bare membershipelementer         -->
+
+<!-- Dette eksemplet er så kompakt som mulig                                              -->
+
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
+    <properties lang="no"> 
+        <datasource>mitt-sas@måne.kommune.no</datasource> 
+        <target>mitt-rapportsystem@måne.kommune.no</target>
+        <type>full</type> 
+        <datetime>2007-06-10T11:32:51</datetime>     
+    </properties>
+    <membership>
+         <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_fag_Astr001</id>
+        </sourcedid>
+        <member>
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <id>global_ID_01236</id>
+            </sourcedid>
+            <idtype>1</idtype> 
+            <role roletype="01"> 
+                <status>1</status> 
+                <interimresult resulttype="Termin 1">
+                    <mode>Grade</mode>
+                    <result>4</result>
+                </interimresult>
+                <interimresult resulttype="Nasjonal prøve">
+                    <mode>Percentage</mode>
+                    <result>58</result>
+                </interimresult>
+                <finalresult resulttype="Standpunkt">
+                    <mode>Grade</mode>
+                    <result>5</result>
+                </finalresult>
+                <finalresult resulttype="Skriftlig eksamen">
+                    <mode>Grade</mode>
+                    <result>5</result>
+                </finalresult>
+                <finalresult resulttype="Muntlig eksamen">
+                    <mode>Grade</mode>
+                   <result>6</result>
+                </finalresult>
+                <extension>
+                </extension>             
+            </role>          
+        </member>       
+    </membership>  
+</enterprise>    
