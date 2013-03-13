@@ -744,6 +744,11 @@
 			<xs:element ref="result" minOccurs="0"/>
 			<xs:element ref="comments" minOccurs="0"/>
 		</xs:sequence>
+		<!-- Denne bryter med IMS Enterprise 1.1. Finalresult har ikke resulttype
+		     knyttet til seg. Vi trenger den for å kunne uttrykke flere sluttresultater
+		     på samme fag/gruppe da en elev typisk kan ha opp til tre karakterer -
+		     standpunkt, skriftlig eksamen og muntlig eksamen -->
+		<xs:attribute name="resulttype" type="xs:anySimpleType"/>
 	</xs:complexType>
 	<xs:element name="finalresult" type="finalresult"/>
 	<xs:complexType name="interimresult">
