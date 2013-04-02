@@ -166,47 +166,56 @@
     <!-- Membership                                                            -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
+
     <!-- Informasjon om aggregert fravær ved Måneflekken skole -->
     <membership>
-        
+
         <!-- Kommentar om medlemskap -->
         <comments>Informasjon om fravær ved Måneflekken skole</comments>
-        
+
         <!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
         <sourcedid>
-            <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-            <id>global_ID_org_17</id> <!-- unik og varig id -->
+            <source>mitt-sas@måne.kommune.no</source>
+            <!-- org/system som tilegnet id'en -->
+            <id>global_ID_org_17</id>
+            <!-- unik og varig id -->
         </sourcedid>
-        
+
         <!-- Medlem Ola Nordmann -->
         <member>
             <!-- Kommentar om medlem -->
-            <comments>Ola Nordmann sitt medlemskap i fraværsoversikt ved Måneflekken skole</comments>		
-            
+            <comments>Ola Nordmann sitt medlemskap i fraværsoversikt ved Måneflekken skole</comments>
+
             <!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
             <sourcedid>
-                <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-                <id>global_ID_01236</id> <!-- unik og varig id -->
+                <source>mitt-sas@måne.kommune.no</source>
+                <!-- org/system som tilegnet id'en -->
+                <id>global_ID_01236</id>
+                <!-- unik og varig id -->
             </sourcedid>
-            
+
             <!-- Om medlem er person eller gruppe -->
-            <idtype>1</idtype> <!-- 1-person, 2-group -->
-            
+            <idtype>1</idtype>
+            <!-- 1-person, 2-group -->
+
             <!-- Medlemmets rolle i gruppa -->
-            <role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
-                <status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
-                <datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
-                
+            <role roletype="01">
+                <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+                <status>1</status>
+                <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+                <datetime>2006-08-20</datetime>
+                <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+
                 <!-- Tidsperiode for gyldighet -->
                 <timeframe>
-                    <begin>2012-08-16</begin> <!-- fra-dato -->
-                    <end>2013-06-30</end> <!-- til-dato -->
+                    <begin>2012-08-16</begin>
+                    <!-- fra-dato -->
+                    <end>2013-06-30</end>
+                    <!-- til-dato -->
                 </timeframe>
-                
+
                 <!-- Utvidelser for å få med fravær -->
                 <extension>
-                    
                     <!-- Dagsfravær for eleven i termin 1 -->
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
@@ -223,7 +232,6 @@
                         <pifu_absence_value>3</pifu_absence_value>
                         <comments>Termin 1</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven i termin 1 -->
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
@@ -240,7 +248,6 @@
                         <pifu_absence_value>4</pifu_absence_value>
                         <comments>Termin 1</comments>
                     </pifu_absence>
-                    
                     <!-- Dagsfravær for eleven i termin 2 -->
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
@@ -257,7 +264,6 @@
                         <pifu_absence_value>1</pifu_absence_value>
                         <comments>Termin 2</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven i termin 2 -->
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
@@ -274,7 +280,6 @@
                         <pifu_absence_value>0</pifu_absence_value>
                         <comments>Termin 2</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven for et gitt fag -->
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
@@ -291,7 +296,6 @@
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven for et gitt fag -->
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
@@ -308,7 +312,6 @@
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven for et gitt fag -->
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
@@ -325,7 +328,6 @@
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
-                    
                     <!-- Timefravær for eleven -->
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
@@ -342,7 +344,6 @@
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
-                    
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
@@ -358,13 +359,12 @@
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
-                    
                 </extension>
-                
+
             </role>
         </member>
     </membership>
-    
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Membership                                                            -->

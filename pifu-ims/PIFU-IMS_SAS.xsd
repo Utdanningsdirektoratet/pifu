@@ -1069,7 +1069,7 @@
 			<!-- (eventuell kommentarer - valfritt) -->
 			<xs:element name="comments" type="comments" minOccurs="0"/>
 		</xs:sequence>
-		
+
 		<!-- ('aggregate' - aggregert fravær for en person i perioden, 'occurence' - en gitt forekomst (per time eller dag) for en person i perioden -->
 		<xs:attribute name="pifu_absence_mode" use="required">
 			<xs:simpleType>
@@ -1081,7 +1081,7 @@
 		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="pifu_absence" type="pifu_absence"/>
-	
+
 	<xs:simpleType name="pifu_absence_type">
 		<xs:restriction base="t_string32">
 			<xs:enumeration value="days"/>
@@ -1089,7 +1089,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="pifu_absence_type" type="pifu_absence_type"/>
-	
+
 	<xs:simpleType name="pifu_absence_value">
 		<xs:restriction base="t_decimal8p4"/>
 	</xs:simpleType>
