@@ -58,7 +58,7 @@
     <membership>
         <sourcedid>
             <source>mitt-sas@måne.kommune.no</source>
-            <id>global_ID_org_17</id> 
+            <id>global_ID_org_17</id>
         </sourcedid>
         <member>
             <sourcedid>
@@ -66,7 +66,7 @@
                 <id>global_ID_01236</id>
             </sourcedid>
             <idtype>1</idtype>
-            
+
             <role roletype="01">
                 <status>1</status>
                 <extension>
@@ -106,7 +106,7 @@
             </role>
         </member>
     </membership>
-    
+
 
     <membership>
         <sourcedid>
