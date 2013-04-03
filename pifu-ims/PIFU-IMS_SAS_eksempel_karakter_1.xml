@@ -3,7 +3,7 @@
 <!-- Author: Senter for IKT i utdanningen -->
 <!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
 
-<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- Dette eksemplet viser karakterer knyttet til elever i undervisningsgrupper           -->
 <!-- der mottakersystemet ikke har person- og gruppeinformasjon allerede, men har behov   -->
 <!-- for denne informasjonen.                                                             -->
 <!-- Det er derfor nødvendig å sende grunnleggende person- og gruppeinformasjon som en    -->
@@ -12,184 +12,281 @@
 <enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
-    
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Properties                                                            -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
+
     <!-- Et minimum av metadata er obligatorisk i enhver <enterprise>-struktur -->
-    <properties lang="no"> <!-- lang: angir språk på metadata, ISO639 -->
-        
+    <properties lang="no">
+        <!-- lang: angir språk på metadata, ISO639 -->
+
         <!-- Kommentar om metadata -->
-        <comments>Karakter- og fraværsdata fra Måne kommunes skoleadministrative system</comments>
-        
+        <comments>Karakterdata fra Måne kommunes skoleadministrative system</comments>
+
         <!-- System som initierer dataoverføring -->
-        <datasource>mitt-sas@måne.kommune.no</datasource> 
-        
+        <datasource>mitt-sas@måne.kommune.no</datasource>
+
         <!-- System som er mål for dataoverføring -->
         <target>mitt-rapportsystem@måne.kommune.no</target>
-        
+
         <!-- Type hendelse, for denne versjonen  -->
-        <type>full</type> 
-        
+        <type>full</type>
+
         <!-- Tidspunkt for opprettelse i kilde, ISO8601 -->
         <datetime>2007-06-10T11:32:51</datetime>
-        
+
     </properties>
-    
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Person                                                                -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
+
     <!-- Personinformasjon om Ola Nordmann -->
-    <person > 
+    <person>
         <!-- Kommentar om person -->
-        <comments lang="no">Informasjon om Ola Nordmann</comments> <!-- lang: angir språk på kommentar, ISO639-->
-        
+        <comments lang="no">Informasjon om Ola Nordmann</comments>
+        <!-- lang: angir språk på kommentar, ISO639-->
+
         <!-- Unik og varig id for person, brukt ifm informasjonsutveksling -->
         <sourcedid>
-            <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-            <id>global_ID_01236</id> <!-- unik og varig id -->
+            <source>mitt-sas@måne.kommune.no</source>
+            <!-- org/system som tilegnet id'en -->
+            <id>global_ID_01236</id>
+            <!-- unik og varig id -->
         </sourcedid>
-        
+
         <!-- Fødselsnummer -->
         <userid useridtype="personNIN">09119311111</userid>
-        
+
         <!-- Identifikator i SAS/SIS -->
         <userid useridtype="sisID">OID375927463</userid>
-        
+
         <!-- Elevnummer -->
         <userid useridtype="studentID">5892956</userid>
-        
+
         <!-- Navn -->
         <name>
-            <fn>Ola Tobias Hansen Nordmann</fn> <!-- formatert navn -->
-            <n> <!-- navn med alle parter adskilt -->
-                <family>Nordmann</family> <!-- etternavn -->
-                <given>Ola Tobias</given> <!-- fornavn -->
+            <fn>Ola Tobias Hansen Nordmann</fn>
+            <!-- formatert navn -->
+            <n>
+                <!-- navn med alle parter adskilt -->
+                <family>Nordmann</family>
+                <!-- etternavn -->
+                <given>Ola Tobias</given>
+                <!-- fornavn -->
             </n>
-        </name> 
-     
-    </person>	
-    
+        </name>
+
+    </person>
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Group                                                                 -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     
-    <!-- Informasjon om faget Astronomi -->
+    <!-- Informasjon om organisasjonsenheten Måneflekken skole -->
     <group>
         
         <!-- Kommentar om gruppe -->
-        <comments lang="no">Informasjon om faget Astronomi</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+        <comments lang="no">Informasjon om organisasjonsenheten Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
         
-        <!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+        <!-- Unik og varig id for gruppe, brukt ifm informasjonsutveksling -->
         <sourcedid>
             <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-            <id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+            <id>global_ID_org_17</id> <!-- unik og varig id -->
         </sourcedid>
         
         <!-- Type gruppe -->
         <grouptype>
-            <scheme>pifu-ims-go-grp</scheme> <!-- skjema som støttes for koding av gruppetyper -->
-            <typevalue level="7">fag</typevalue> <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+            <scheme>pifu-ims-go-org</scheme> <!-- skjema som støttes for koding av gruppetyper -->
+            <typevalue level="2">skole</typevalue> <!-- type gruppe, verdier for dette scheme: 1-skoleeier, 2-skole-->
         </grouptype>
         
         <!-- Beskrivelse -->
         <description>
-            <short>Astr001_Vår2007</short> <!-- kort beskrivelse -->
-            <long>2-timers valgfag i 7. klasse. Her lærer vi om solsystemer og planeter. Ingen forkunnskaper nødvendig.</long> <!-- lang beskrivelse -->
-            <full>Astronomi - et valgfag for elever på 7. årstrinn i vårsemesteret. Tema: en kort innføring i solsystemer og planter. Særlig fokus er det på vårt eget solsystem og på bla bla bla bla bla.... Vurderingsform: mappevurdering. I tillegg kan elevene trekkes ut til muntlig eksamen. Det gis tallkarakterer. </full> <!-- full beskrivelse -->
+            <short>Måneflekken skole</short> <!-- kort beskrivelse -->
         </description>	
         
-        
-        <!-- Relasjon til Måneflekken skole -->
-        <relationship relation="1"> <!-- 1-parent, 3-also known as -->
+        <!-- Relasjon til Måne kommune -->
+        <relationship relation="1"> <!-- 1-parent, 2-child, 3-also known as -->
             <!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
             <sourcedid>
                 <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-                <id>global_ID_org_17</id> <!-- unik og varig id -->
+                <id>global_ID_org_2</id> <!-- unik og varig id -->
             </sourcedid>
-            <label>Måneflekken skole</label>
-        </relationship>		
+            <label>Måne kommune</label>
+        </relationship>	
         
         <!-- Utvidelser -->
         <extension>
             
-            <!-- Kortform av Grep-kode for fag -->
-            <pifu_id type="grepCodeShortForm"> <!-- type: angir type id -->
-                <pifu_value>NAT007</pifu_value>
-                <pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
-                <pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+            <!-- Organisasjonsnummer -->
+            <pifu_id type="organizationNumber"> <!-- type: angir type id -->
+                <pifu_value>333000333</pifu_value>
+                <pifu_scope>Enhetsregisteret</pifu_scope> <!-- gyldighetsområde -->
+                <pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
             </pifu_id>
             
-            <!-- Grep-kode for fag -->
-            <pifu_id type="grepCode"> <!-- type: angir type id -->
-                <pifu_value> uuid:7a8f9388-6d80-40d9-a078-7883dccbf693</pifu_value>
-                <pifu_scope>grep - levende læreplaner</pifu_scope> <!-- gyldighetsområde -->
-                <pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
-            </pifu_id>		
+            <!-- Skolens Vigonummer -->
+            <pifu_id type="vigoNumber">
+                <pifu_value>5234</pifu_value>
+                <pifu_scope>vigo</pifu_scope>
+                <pifu_unique>1</pifu_unique>
+            </pifu_id>
+            
+            <!-- Juridisk navn -->
+            <pifu_name type="legalName"> <!-- type: angir type navn -->           
+                <pifu_value>Måneflekken barne- og ungdomsskole</pifu_value>
+            </pifu_name>
+ 
+            <!-- Kortform -->
+            <pifu_name type="shortName"> <!-- type: angir type navn -->           
+                <pifu_value>Måneflekken</pifu_value>
+            </pifu_name>	
             
         </extension>	
         
     </group>
     
-    
+    <!-- Informasjon om faget Astronomi -->
+    <group>
+
+        <!-- Kommentar om gruppe -->
+        <comments lang="no">Informasjon om faget Astronomi</comments>
+        <!-- lang: angir språk på kommentar, ISO639 -->
+
+        <!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <!-- org/system som tilegnet id'en -->
+            <id>global_ID_fag_Astr001</id>
+            <!-- unik og varig id -->
+        </sourcedid>
+
+        <!-- Type gruppe -->
+        <grouptype>
+            <scheme>pifu-ims-go-grp</scheme>
+            <!-- skjema som støttes for koding av gruppetyper -->
+            <typevalue level="7">fag</typevalue>
+            <!-- type gruppe, verdier for dette scheme: 1-basisgruppe, 2-undervisningsgruppe, 3-kontaktlærergruppe, 4-trinn, 5-Utdanningsprogram, 6-Programområde, 7-Fag -->
+        </grouptype>
+
+        <!-- Beskrivelse -->
+        <description>
+            <short>Astr001_Vår2007</short>
+            <!-- kort beskrivelse -->
+            <long>2-timers valgfag i 7. klasse. Her lærer vi om solsystemer og planeter. Ingen forkunnskaper nødvendig.</long>
+            <!-- lang beskrivelse -->
+            <full>Astronomi - et valgfag for elever på 7. årstrinn i vårsemesteret. Tema: en kort innføring i solsystemer og planter. Særlig fokus er det på vårt eget solsystem og på bla bla bla bla bla.... Vurderingsform: mappevurdering. I tillegg kan elevene trekkes ut til muntlig eksamen. Det gis tallkarakterer. </full>
+            <!-- full beskrivelse -->
+        </description>
+
+
+        <!-- Relasjon til Måneflekken skole -->
+        <relationship relation="1">
+            <!-- 1-parent, 3-also known as -->
+            <!-- Unik og varig id for relasjonen, brukt ifm informasjonsutveksling -->
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <!-- org/system som tilegnet id'en -->
+                <id>global_ID_org_17</id>
+                <!-- unik og varig id -->
+            </sourcedid>
+            <label>Måneflekken skole</label>
+        </relationship>
+
+        <!-- Utvidelser -->
+        <extension>
+            <!-- Kortform av Grep-kode for fag -->
+            <pifu_id type="grepCodeShortForm">
+                <!-- type: angir type id -->
+                <pifu_value>NAT007</pifu_value>
+                <pifu_scope>grep - levende læreplaner</pifu_scope>
+                <!-- gyldighetsområde -->
+                <pifu_unique>0</pifu_unique>
+                <!-- om id er unik for gruppe i gyldighetsområde -->
+            </pifu_id>
+            <!-- Grep-kode for fag -->
+            <pifu_id type="grepCode">
+                <!-- type: angir type id -->
+                <pifu_value> uuid:7a8f9388-6d80-40d9-a078-7883dccbf693</pifu_value>
+                <pifu_scope>grep - levende læreplaner</pifu_scope>
+                <!-- gyldighetsområde -->
+                <pifu_unique>0</pifu_unique>
+                <!-- om id er unik for gruppe i gyldighetsområde -->
+            </pifu_id>
+        </extension>
+
+    </group>
+
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Membership                                                            -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
+
     <!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole -->
     <membership>
-        
+
         <!-- Kommentar om medlemskap -->
         <comments>Informasjon om medlemskap til faget astronomi ved Måneflekken skole</comments>
-        
+
         <!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
         <sourcedid>
-            <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-            <id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+            <source>mitt-sas@måne.kommune.no</source>
+            <!-- org/system som tilegnet id'en -->
+            <id>global_ID_fag_Astr001</id>
+            <!-- unik og varig id -->
         </sourcedid>
-        
+
         <!-- Medlem Ola Nordmann -->
         <member>
             <!-- Kommentar om medlem -->
-            <comments>Ola Nordmann sitt medlemskap i faget astronomi</comments>		
-            
+            <comments>Ola Nordmann sitt medlemskap i faget astronomi</comments>
+
             <!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
             <sourcedid>
-                <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-                <id>global_ID_01236</id> <!-- unik og varig id -->
+                <source>mitt-sas@måne.kommune.no</source>
+                <!-- org/system som tilegnet id'en -->
+                <id>global_ID_01236</id>
+                <!-- unik og varig id -->
             </sourcedid>
-            
+
             <!-- Om medlem er person eller gruppe -->
-            <idtype>1</idtype> <!-- 1-person, 2-group -->
-            
+            <idtype>1</idtype>
+            <!-- 1-person, 2-group -->
+
             <!-- Medlemmets rolle i gruppa -->
-            <role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
-                <status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
-                <datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
-                
+            <role roletype="01">
+                <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+                <status>1</status>
+                <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+                <datetime>2012-08-16</datetime>
+                <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+
                 <!-- Tidsperiode for gyldighet -->
                 <timeframe>
-                    <begin>2007-01-05</begin> <!-- fra-dato -->
-                    <end>2007-06-30</end> <!-- til-dato -->
+                    <begin>2012-08-16</begin>
+                    <!-- fra-dato -->
+                    <end>2013-06-30</end>
+                    <!-- til-dato -->
                 </timeframe>
-                
+
                 <!-- Karakter som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="Termin 1">
+                <interimresult resulttype="Term 1">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -204,14 +301,15 @@
                     <result>4</result>
                     <comments lang="no">Karakter første termin er svak</comments>
                 </interimresult>
-                
+
                 <!-- Karakterer som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="Nasjonal prøve">
+                <interimresult resulttype="National test">
                     <!-- Resultatskalaen her er Percentage, prosent riktig mellom 0 og 100 -->
                     <mode>Percentage</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "1"> <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
+                    <values valuetype="1">
+                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
                         <min>0</min>
                         <max>100</max>
                     </values>
@@ -219,14 +317,15 @@
                     <result>58</result>
                     <comments lang="no">Resultat for nasjonal prøve i astronomi</comments>
                 </interimresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Standpunkt">
+                <finalresult resulttype="Final grade">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -238,14 +337,15 @@
                     <result>5</result>
                     <comments lang="no">Standandpunktkarakter er vektet opp til 5</comments>
                 </finalresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Skriftlig eksamen">
+                <finalresult resulttype="Exam grade written">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -257,14 +357,15 @@
                     <result>5</result>
                     <comments lang="no">Skriftlig eksamen avholdt 2007-05-04</comments>
                 </finalresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Muntlig eksamen">
+                <finalresult resulttype="Exam grade oral">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -276,18 +377,8 @@
                     <result>6</result>
                     <comments lang="no">Muntlig eksamen avholdt 2007-05-08</comments>
                 </finalresult>
-                
-                <!-- Utvidelser for å få med fravær -->
-                <extension>
-                    
-                    
-                </extension>
-                
+               
             </role>
-            
         </member>
-        
     </membership>
-    
-    
-</enterprise>    
+</enterprise>

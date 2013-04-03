@@ -806,6 +806,7 @@
 			<xs:element ref="pifu_nativeTongue" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="pifu_hasContactPerson" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="pifu_primaryRelation" minOccurs="0"/>
+			<xs:element ref="pifu_absence" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extension"/>
@@ -1053,4 +1054,45 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="pifu_primaryRelation" type="pifu_primaryRelation"/>
+
+	<!-- pifu_absence - Fraværsinformasjon på en person -->
+	<xs:complexType name="pifu_absence">
+		<xs:sequence>
+			<!-- (fraværsid - identifiserer en spesifikk fraværsoppføring i kildesystemet) -->
+			<xs:element ref="sourcedid" minOccurs="0"/>
+			<!-- (Dager/Timer - obligatorisk) -->
+			<xs:element name="pifu_absence_type" type="pifu_absence_type" nillable="false"/>
+			<!-- (bruker standardelementet timeframe for å sette til og fra - obligatorisk, her kan en sette datoer og termin/adminperiod) -->
+			<xs:element name="timeframe" type="timeframe"/>
+			<!-- (fraværsværdi) -->
+			<xs:element name="pifu_absence_value" type="pifu_absence_value"/>
+			<!-- (eventuell kommentarer - valfritt) -->
+			<xs:element name="comments" type="comments" minOccurs="0"/>
+		</xs:sequence>
+
+		<!-- ('aggregate' - aggregert fravær for en person i perioden, 'occurence' - en gitt forekomst (per time eller dag) for en person i perioden -->
+		<xs:attribute name="pifu_absence_mode" use="required">
+			<xs:simpleType>
+				<xs:restriction base="t_string32">
+					<xs:enumeration value="aggregate"/>
+					<xs:enumeration value="occurrence"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="pifu_absence" type="pifu_absence"/>
+
+	<xs:simpleType name="pifu_absence_type">
+		<xs:restriction base="t_string32">
+			<xs:enumeration value="days"/>
+			<xs:enumeration value="hours"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="pifu_absence_type" type="pifu_absence_type"/>
+
+	<xs:simpleType name="pifu_absence_value">
+		<xs:restriction base="t_decimal8p4"/>
+	</xs:simpleType>
+	<xs:element name="pifu_absence_value" type="pifu_absence_value"/>
+
 </xs:schema>
