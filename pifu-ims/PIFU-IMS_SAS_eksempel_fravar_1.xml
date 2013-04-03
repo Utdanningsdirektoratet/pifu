@@ -410,7 +410,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_359</id>
+                            <id>global_ID_Absence_359</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>

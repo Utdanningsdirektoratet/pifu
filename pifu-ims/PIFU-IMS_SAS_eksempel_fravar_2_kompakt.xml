@@ -37,7 +37,7 @@
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_251</id>
+                            <id>global_ID_Absence_251</id>
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
                         <timeframe>
@@ -50,7 +50,7 @@
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_252</id>
+                            <id>global_ID_Absence_252</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -62,7 +62,7 @@
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_253</id>
+                            <id>global_ID_Absence_253</id>
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
                         <timeframe>
@@ -74,7 +74,7 @@
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_254</id>
+                            <id>global_ID_Absence_254</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -105,7 +105,7 @@
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_281</id>
+                            <id>global_ID_Absence_281</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -117,7 +117,7 @@
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_282</id>
+                            <id>global_ID_Absence_282</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -129,7 +129,7 @@
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_283</id>
+                            <id>global_ID_Absence_283</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -141,7 +141,7 @@
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_647</id>
+                            <id>global_ID_Absence_647</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
@@ -153,7 +153,7 @@
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
-                            <id>global_ID__Absence_648</id>
+                            <id>global_ID_Absence_648</id>
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
