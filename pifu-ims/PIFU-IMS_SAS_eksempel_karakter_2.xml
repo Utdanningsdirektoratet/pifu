@@ -10,84 +10,95 @@
 <enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
-    
+
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Properties                                                            -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
+
     <!-- Et minimum av metadata er obligatorisk i enhver <enterprise>-struktur -->
-    <properties lang="no"> <!-- lang: angir språk på metadata, ISO639 -->
-        
+    <properties lang="no">
+        <!-- lang: angir språk på metadata, ISO639 -->
+
         <!-- Kommentar om metadata -->
-        <comments>Karakter- og fraværsdata fra Måne kommunes skoleadministrative system</comments>
-        
+        <comments>Karakterdata fra Måne kommunes skoleadministrative system</comments>
+
         <!-- System som initierer dataoverføring -->
-        <datasource>mitt-sas@måne.kommune.no</datasource> 
-        
+        <datasource>mitt-sas@måne.kommune.no</datasource>
+
         <!-- System som er mål for dataoverføring -->
         <target>mitt-rapportsystem@måne.kommune.no</target>
-        
+
         <!-- Type hendelse, for denne versjonen  -->
-        <type>full</type> 
-        
+        <type>full</type>
+
         <!-- Tidspunkt for opprettelse i kilde, ISO8601 -->
         <datetime>2007-06-10T11:32:51</datetime>
-        
+
     </properties>
 
-    
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
     <!-- Membership                                                            -->
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
-    
-    <!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole -->
+
+    <!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole, inkludert karakter informasjon for faget -->
     <membership>
-        
+
         <!-- Kommentar om medlemskap -->
         <comments>Informasjon om medlemskap til faget astronomi ved Måneflekken skole</comments>
-        
+
         <!-- Unik og varig id for medlemskap, brukt ifm informasjonsutveksling -->
         <sourcedid>
-            <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-            <id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+            <source>mitt-sas@måne.kommune.no</source>
+            <!-- org/system som tilegnet id'en -->
+            <id>global_ID_fag_Astr001</id>
+            <!-- unik og varig id -->
         </sourcedid>
-        
+
         <!-- Medlem Ola Nordmann -->
         <member>
             <!-- Kommentar om medlem -->
-            <comments>Ola Nordmann sitt medlemskap i faget astronomi</comments>		
-            
+            <comments>Ola Nordmann sitt medlemskap i faget astronomi</comments>
+
             <!-- Unik og varig id for medlem, brukt ifm informasjonsutveksling -->
             <sourcedid>
-                <source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-                <id>global_ID_01236</id> <!-- unik og varig id -->
+                <source>mitt-sas@måne.kommune.no</source>
+                <!-- org/system som tilegnet id'en -->
+                <id>global_ID_01236</id>
+                <!-- unik og varig id -->
             </sourcedid>
-            
+
             <!-- Om medlem er person eller gruppe -->
-            <idtype>1</idtype> <!-- 1-person, 2-group -->
-            
+            <idtype>1</idtype>
+            <!-- 1-person, 2-group -->
+
             <!-- Medlemmets rolle i gruppa -->
-            <role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
-                <status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
-                <datetime>2006-08-20</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
-                
+            <role roletype="01">
+                <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
+                <status>1</status>
+                <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
+                <datetime>2006-08-20</datetime>
+                <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
+
                 <!-- Tidsperiode for gyldighet -->
                 <timeframe>
-                    <begin>2007-01-05</begin> <!-- fra-dato -->
-                    <end>2007-06-30</end> <!-- til-dato -->
+                    <begin>2012-08-16</begin>
+                    <!-- fra-dato -->
+                    <end>2013-06-30</end>
+                    <!-- til-dato -->
                 </timeframe>
-                
+
                 <!-- Karakter som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="Termin 1">
+                <interimresult resulttype="Term 1">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -102,14 +113,15 @@
                     <result>4</result>
                     <comments lang="no">Karakter første termin er svak</comments>
                 </interimresult>
-                
+
                 <!-- Karakterer som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="Nasjonal prøve">
+                <interimresult resulttype="National test">
                     <!-- Resultatskalaen her er Percentage, prosent riktig mellom 0 og 100 -->
                     <mode>Percentage</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "1"> <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
+                    <values valuetype="1">
+                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
                         <min>0</min>
                         <max>100</max>
                     </values>
@@ -117,14 +129,15 @@
                     <result>58</result>
                     <comments lang="no">Resultat for nasjonal prøve i astronomi</comments>
                 </interimresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Standpunkt">
+                <finalresult resulttype="Final grade">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -136,14 +149,15 @@
                     <result>5</result>
                     <comments lang="no">Standandpunktkarakter er vektet opp til 5</comments>
                 </finalresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Skriftlig eksamen">
+                <finalresult resulttype="Exam grade written">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -155,14 +169,15 @@
                     <result>5</result>
                     <comments lang="no">Skriftlig eksamen avholdt 2007-05-04</comments>
                 </finalresult>
-                
+
                 <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Muntlig eksamen">
+                <finalresult resulttype="Exam grade oral">
                     <!-- Resultatskalaen her er Grade, diskrete karakterer -->
                     <mode>Grade</mode>
                     <!-- Values viser hva som er gyldige resultatverdier -->
                     <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype = "0"> <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
+                    <values valuetype="0">
+                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
                         <list>1</list>
                         <list>2</list>
                         <list>3</list>
@@ -174,18 +189,9 @@
                     <result>6</result>
                     <comments lang="no">Muntlig eksamen avholdt 2007-05-08</comments>
                 </finalresult>
-                
-                <!-- Utvidelser for å få med fravær -->
-                <extension>
-                    
-                    
-                </extension>
-                
+
             </role>
-            
         </member>
-        
     </membership>
-    
-    
-</enterprise>    
+
+</enterprise>
