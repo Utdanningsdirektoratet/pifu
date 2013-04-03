@@ -98,7 +98,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_251</id>
+                            <id>global_ID_Absence_251</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
@@ -114,7 +114,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_252</id>
+                            <id>global_ID_Absence_252</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -131,7 +131,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_253</id>
+                            <id>global_ID_Absence_253</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
@@ -148,7 +148,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_254</id>
+                            <id>global_ID_Absence_254</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -227,7 +227,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_281</id>
+                            <id>global_ID_Absence_281</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -244,7 +244,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_282</id>
+                            <id>global_ID_Absence_282</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -261,7 +261,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_283</id>
+                            <id>global_ID_Absence_283</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -278,7 +278,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_647</id>
+                            <id>global_ID_Absence_647</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -294,7 +294,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID__Absence_648</id>
+                            <id>global_ID_Absence_648</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
