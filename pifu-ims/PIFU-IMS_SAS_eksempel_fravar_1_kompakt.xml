@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Senter for IKT i utdanningen -->
+<!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
+
+<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- der mottakersystemet ikke har person- og gruppeinformasjon allerede, men har behov   -->
+<!-- for denne informasjonen.                                                             -->
+<!-- Det er derfor nødvendig å sende grunnleggende person- og gruppeinformasjon som en    -->
+<!-- del av overføringen.                                                                 -->
+
+<!-- Dette eksemplet er så kompakt som mulig og forutsetter at mottakersystemet ikke      -->
+<!-- trenger mer informasjon, identifikatorer osv.                                        -->
+
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
+    <properties lang="no">
+        <datasource>mitt-sas@måne.kommune.no</datasource>
+        <target>mitt-rapportsystem@måne.kommune.no</target>
+        <type>full</type>
+        <datetime>2007-06-10T11:32:51</datetime>
+    </properties>
+    <person>
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_01236</id>
+        </sourcedid>
+        <name>
+            <fn>Ola Tobias Hansen Nordmann</fn>
+            <n>
+                <family>Nordmann</family>
+                <given>Ola Tobias</given>
+            </n>
+        </name>
+    </person>
+    <group>
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_org_17</id>
+        </sourcedid>
+        <grouptype>
+            <scheme>pifu-ims-go-org</scheme>
+            <typevalue level="2">skole</typevalue>
+        </grouptype>
+        <description>
+            <short>Måneflekken skole</short>
+        </description>	
+        <relationship relation="1"> 
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <id>global_ID_org_2</id>
+            </sourcedid>
+            <label>Måne kommune</label>
+        </relationship>	
+    </group>
+    <group>
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_fag_Astr001</id>
+        </sourcedid>
+        <grouptype>
+            <scheme>pifu-ims-go-grp</scheme>
+            <typevalue level="7">fag</typevalue>
+        </grouptype>
+        <description>
+            <short>Astr001_Vår2007</short>
+        </description>
+        <relationship relation="1">
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <id>global_ID_org_17</id>
+            </sourcedid>
+            <label>Måneflekken skole</label>
+        </relationship>
+    </group>
+
+    <membership>
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_org_17</id>
+        </sourcedid>
+        <member>
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <id>global_ID_01236</id>
+            </sourcedid>
+            <idtype>1</idtype>
+
+            <role roletype="01">
+                <status>1</status>
+                <extension>
+                    <pifu_absence pifu_absence_mode="aggregate">
+                        <pifu_absence_type>days</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-08-16</begin>
+                            <end>2013-01-15</end>
+                        </timeframe>
+                        <pifu_absence_value>3</pifu_absence_value>
+                    </pifu_absence>
+                    <pifu_absence pifu_absence_mode="aggregate">
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-08-16</begin>
+                            <end>2013-01-15</end>
+                        </timeframe>
+                        <pifu_absence_value>4</pifu_absence_value>
+                    </pifu_absence>
+                    <pifu_absence pifu_absence_mode="aggregate">
+                        <pifu_absence_type>days</pifu_absence_type>
+                        <timeframe>
+                            <begin>2013-01-16</begin>
+                            <end>2013-06-30</end>
+                        </timeframe>
+                        <pifu_absence_value>1</pifu_absence_value>
+                    </pifu_absence>
+                    <pifu_absence pifu_absence_mode="aggregate">
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2013-01-16</begin>
+                            <end>2013-06-30</end>
+                        </timeframe>
+                        <pifu_absence_value>0</pifu_absence_value>
+                    </pifu_absence>
+                </extension>
+            </role>
+        </member>
+    </membership>
+</enterprise>
