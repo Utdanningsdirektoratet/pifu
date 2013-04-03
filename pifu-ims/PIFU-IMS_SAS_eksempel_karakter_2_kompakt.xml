@@ -9,9 +9,9 @@
 
 <!-- Dette eksemplet er så kompakt som mulig                                              -->
 
-<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev"
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.x-dev PIFU-IMS_SAS.xsd">
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9 PIFU-IMS_SAS.xsd">
     <properties lang="no">
         <datasource>mitt-sas@måne.kommune.no</datasource>
         <target>mitt-rapportsystem@måne.kommune.no</target>
