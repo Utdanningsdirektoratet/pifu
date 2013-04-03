@@ -3,7 +3,7 @@
 <!-- Author: Senter for IKT i utdanningen -->
 <!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
 
-<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- Dette eksemplet viser fravær knyttet til elever i undervisningsgrupper               -->
 <!-- der mottakersystemet ikke har person- og gruppeinformasjon allerede, men har behov   -->
 <!-- for denne informasjonen.                                                             -->
 <!-- Det er derfor nødvendig å sende grunnleggende person- og gruppeinformasjon som en    -->
@@ -24,7 +24,7 @@
         <!-- lang: angir språk på metadata, ISO639 -->
 
         <!-- Kommentar om metadata -->
-        <comments>Karakter- og fraværsdata fra Måne kommunes skoleadministrative system</comments>
+        <comments>Fraværsdata fra Måne kommunes skoleadministrative system</comments>
 
         <!-- System som initierer dataoverføring -->
         <datasource>mitt-sas@måne.kommune.no</datasource>
@@ -388,13 +388,12 @@
                 
                 <extension>
                     <!-- Timefravær for eleven i faget astronomi -->
-                    <!-- Timefravær må være i klokketimer        -->
                     
                     <pifu_absence pifu_absence_mode="occurrence">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001_Absence_358</id>
+                            <id>global_ID_Absence_358</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -402,6 +401,7 @@
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
@@ -410,7 +410,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001_Absence_359</id>
+                            <id>global_ID__Absence_359</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -418,6 +418,7 @@
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
@@ -426,7 +427,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001_Absence_360</id>
+                            <id>global_ID_Absence_360</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -434,6 +435,7 @@
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
@@ -442,7 +444,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001_Absence_834</id>
+                            <id>global_ID_Absence_834</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -450,6 +452,7 @@
                             <begin>2012-12-18</begin>
                             <end>2012-10-18</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>
@@ -458,7 +461,7 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001_Absence_835</id>
+                            <id>global_ID_Absence_835</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
@@ -466,6 +469,7 @@
                             <begin>2012-12-18</begin>
                             <end>2012-10-18</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0.75</pifu_absence_value>
                         <comments>Value need to be reported in clock hours</comments>
                     </pifu_absence>

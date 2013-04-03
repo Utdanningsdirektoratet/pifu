@@ -3,7 +3,7 @@
 <!-- Author: Senter for IKT i utdanningen -->
 <!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
 
-<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- Dette eksemplet viser karakterer knyttet til elever i undervisningsgrupper           -->
 <!-- der mottakersystemet ikke har person- og gruppeinformasjon allerede, men har behov   -->
 <!-- for denne informasjonen.                                                             -->
 <!-- Det er derfor nødvendig å sende grunnleggende person- og gruppeinformasjon som en    -->

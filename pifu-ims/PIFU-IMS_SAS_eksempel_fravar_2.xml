@@ -3,7 +3,7 @@
 <!-- Author: Senter for IKT i utdanningen -->
 <!-- Eksempel på utrekk fra SAS på IMS Enterprise basert på PIFU  -->
 
-<!-- Dette eksemplet viser karakterer og fravær knyttet til elever i undervisningsgrupper -->
+<!-- Dette eksemplet viser fravær knyttet til elever i undervisningsgrupper               -->
 <!-- der mottakersystemet allerede har identifikatorene til personer og grupper           -->
 <!-- Vi kan derfor gjøre en minimalistisk overføring med bare membershipelementer         -->
 
@@ -22,7 +22,7 @@
         <!-- lang: angir språk på metadata, ISO639 -->
 
         <!-- Kommentar om metadata -->
-        <comments>Karakter- og fraværsdata fra Måne kommunes skoleadministrative system</comments>
+        <comments>Fraværsdata fra Måne kommunes skoleadministrative system</comments>
 
         <!-- System som initierer dataoverføring -->
         <datasource>mitt-sas@måne.kommune.no</datasource>
@@ -98,8 +98,8 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_org_17</id>
-                            <!-- unik og varig id -->
+                            <id>global_ID__Absence_251</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
                         <timeframe>
@@ -114,14 +114,15 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_org_17</id>
-                            <!-- unik og varig id -->
+                            <id>global_ID__Absence_252</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-08-16</begin>
                             <end>2013-01-15</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>4</pifu_absence_value>
                         <comments>Termin 1</comments>
                     </pifu_absence>
@@ -130,8 +131,8 @@
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_org_17</id>
-                            <!-- unik og varig id -->
+                            <id>global_ID__Absence_253</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>days</pifu_absence_type>
                         <timeframe>
@@ -141,101 +142,25 @@
                         <pifu_absence_value>1</pifu_absence_value>
                         <comments>Termin 2</comments>
                     </pifu_absence>
+
                     <!-- Timefravær for eleven i termin 2 -->
                     <pifu_absence pifu_absence_mode="aggregate">
                         <sourcedid>
                             <source>mitt-sas@måne.kommune.no</source>
                             <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_org_17</id>
-                            <!-- unik og varig id -->
+                            <id>global_ID__Absence_254</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
                         <pifu_absence_type>hours</pifu_absence_type>
                         <timeframe>
                             <begin>2013-01-16</begin>
                             <end>2013-06-30</end>
                         </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
                         <pifu_absence_value>0</pifu_absence_value>
                         <comments>Termin 2</comments>
                     </pifu_absence>
-                    <!-- Timefravær for eleven for et gitt fag -->
-                    <pifu_absence pifu_absence_mode="occurrence">
-                        <sourcedid>
-                            <source>mitt-sas@måne.kommune.no</source>
-                            <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001</id>
-                            <!-- unik og varig id -->
-                        </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
-                        <timeframe>
-                            <begin>2012-10-16</begin>
-                            <end>2012-10-16</end>
-                        </timeframe>
-                        <pifu_absence_value>0.75</pifu_absence_value>
-                        <comments>Value need to be reported in clock hours</comments>
-                    </pifu_absence>
-                    <!-- Timefravær for eleven for et gitt fag -->
-                    <pifu_absence pifu_absence_mode="occurrence">
-                        <sourcedid>
-                            <source>mitt-sas@måne.kommune.no</source>
-                            <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001</id>
-                            <!-- unik og varig id -->
-                        </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
-                        <timeframe>
-                            <begin>2012-10-16</begin>
-                            <end>2012-10-16</end>
-                        </timeframe>
-                        <pifu_absence_value>0.75</pifu_absence_value>
-                        <comments>Value need to be reported in clock hours</comments>
-                    </pifu_absence>
-                    <!-- Timefravær for eleven for et gitt fag -->
-                    <pifu_absence pifu_absence_mode="occurrence">
-                        <sourcedid>
-                            <source>mitt-sas@måne.kommune.no</source>
-                            <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001</id>
-                            <!-- unik og varig id -->
-                        </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
-                        <timeframe>
-                            <begin>2012-10-16</begin>
-                            <end>2012-10-16</end>
-                        </timeframe>
-                        <pifu_absence_value>0.75</pifu_absence_value>
-                        <comments>Value need to be reported in clock hours</comments>
-                    </pifu_absence>
-                    <!-- Timefravær for eleven -->
-                    <pifu_absence pifu_absence_mode="occurrence">
-                        <sourcedid>
-                            <source>mitt-sas@måne.kommune.no</source>
-                            <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001</id>
-                            <!-- unik og varig id -->
-                        </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
-                        <timeframe>
-                            <begin>2012-12-18</begin>
-                            <end>2012-10-18</end>
-                        </timeframe>
-                        <pifu_absence_value>0.75</pifu_absence_value>
-                        <comments>Value need to be reported in clock hours</comments>
-                    </pifu_absence>
-                    <pifu_absence pifu_absence_mode="occurrence">
-                        <sourcedid>
-                            <source>mitt-sas@måne.kommune.no</source>
-                            <!-- org/system som tilegnet id'en -->
-                            <id>global_ID_fag_Astr001</id>
-                            <!-- unik og varig id -->
-                        </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
-                        <timeframe>
-                            <begin>2012-12-18</begin>
-                            <end>2012-10-18</end>
-                        </timeframe>
-                        <pifu_absence_value>0.75</pifu_absence_value>
-                        <comments>Value need to be reported in clock hours</comments>
-                    </pifu_absence>
+
                 </extension>
 
             </role>
@@ -249,7 +174,7 @@
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
 
-    <!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole, inkludert karakter og detaljert fravær informasjon for faget -->
+    <!-- Informasjon om medlemskap til faget astronomi ved Måneflekken skole, inkludert detaljert fravær informasjon for faget -->
     <membership>
 
         <!-- Kommentar om medlemskap -->
@@ -290,110 +215,98 @@
 
                 <!-- Tidsperiode for gyldighet -->
                 <timeframe>
-                    <begin>2007-01-05</begin>
+                    <begin>2012-08-16</begin>
                     <!-- fra-dato -->
-                    <end>2007-06-30</end>
+                    <end>2013-06-30</end>
                     <!-- til-dato -->
                 </timeframe>
 
-                <!-- Karakter som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="Term 1">
-                    <!-- Resultatskalaen her er Grade, diskrete karakterer -->
-                    <mode>Grade</mode>
-                    <!-- Values viser hva som er gyldige resultatverdier -->
-                    <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype="0">
-                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
-                        <list>1</list>
-                        <list>2</list>
-                        <list>3</list>
-                        <list>4</list>
-                        <list>5</list>
-                        <list>6</list>
-                        <list>IV</list>
-                        <list>F</list>
-                        <list>D</list>
-                    </values>
-                    <!-- Selve resultatet -->
-                    <result>4</result>
-                    <comments lang="no">Karakter første termin er svak</comments>
-                </interimresult>
-
-                <!-- Karakterer som ikke blir stående og ikke blir med eleven videre -->
-                <interimresult resulttype="National test">
-                    <!-- Resultatskalaen her er Percentage, prosent riktig mellom 0 og 100 -->
-                    <mode>Percentage</mode>
-                    <!-- Values viser hva som er gyldige resultatverdier -->
-                    <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype="1">
-                        <!-- 0 = liste med verdier, 1 = minimum og maximumsverdier -->
-                        <min>0</min>
-                        <max>100</max>
-                    </values>
-                    <!-- Selve resultatet -->
-                    <result>58</result>
-                    <comments lang="no">Resultat for nasjonal prøve i astronomi</comments>
-                </interimresult>
-
-                <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Final grade">
-                    <!-- Resultatskalaen her er Grade, diskrete karakterer -->
-                    <mode>Grade</mode>
-                    <!-- Values viser hva som er gyldige resultatverdier -->
-                    <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype="0">
-                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
-                        <list>1</list>
-                        <list>2</list>
-                        <list>3</list>
-                        <list>4</list>
-                        <list>5</list>
-                        <list>6</list>
-                    </values>
-                    <!-- Selve resultatet -->
-                    <result>5</result>
-                    <comments lang="no">Standandpunktkarakter er vektet opp til 5</comments>
-                </finalresult>
-
-                <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Exam grade written">
-                    <!-- Resultatskalaen her er Grade, diskrete karakterer -->
-                    <mode>Grade</mode>
-                    <!-- Values viser hva som er gyldige resultatverdier -->
-                    <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype="0">
-                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
-                        <list>1</list>
-                        <list>2</list>
-                        <list>3</list>
-                        <list>4</list>
-                        <list>5</list>
-                        <list>6</list>
-                    </values>
-                    <!-- Selve resultatet -->
-                    <result>5</result>
-                    <comments lang="no">Skriftlig eksamen avholdt 2007-05-04</comments>
-                </finalresult>
-
-                <!-- Karakter som blir stående og blir med eleven videre -->
-                <finalresult resulttype="Exam grade oral">
-                    <!-- Resultatskalaen her er Grade, diskrete karakterer -->
-                    <mode>Grade</mode>
-                    <!-- Values viser hva som er gyldige resultatverdier -->
-                    <!-- Om det ikke er tvil kan denne i de fleste tilfeller sløyfes-->
-                    <values valuetype="0">
-                        <!-- 0 = liste med verdier, 1 = minimum og maksimumsverdier -->
-                        <list>1</list>
-                        <list>2</list>
-                        <list>3</list>
-                        <list>4</list>
-                        <list>5</list>
-                        <list>6</list>
-                    </values>
-                    <!-- Selve resultatet -->
-                    <result>6</result>
-                    <comments lang="no">Muntlig eksamen avholdt 2007-05-08</comments>
-                </finalresult>
+                <extension>                    
+                    <!-- Timefravær for eleven for et gitt fag -->
+                    <pifu_absence pifu_absence_mode="occurrence">
+                        <sourcedid>
+                            <source>mitt-sas@måne.kommune.no</source>
+                            <!-- org/system som tilegnet id'en -->
+                            <id>global_ID__Absence_281</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
+                        </sourcedid>
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-10-16</begin>
+                            <end>2012-10-16</end>
+                        </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
+                        <pifu_absence_value>0.75</pifu_absence_value>
+                        <comments>Value need to be reported in clock hours</comments>
+                    </pifu_absence>
+                    <!-- Timefravær for eleven for et gitt fag -->
+                    <pifu_absence pifu_absence_mode="occurrence">
+                        <sourcedid>
+                            <source>mitt-sas@måne.kommune.no</source>
+                            <!-- org/system som tilegnet id'en -->
+                            <id>global_ID__Absence_282</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
+                        </sourcedid>
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-10-16</begin>
+                            <end>2012-10-16</end>
+                        </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
+                        <pifu_absence_value>0.75</pifu_absence_value>
+                        <comments>Value need to be reported in clock hours</comments>
+                    </pifu_absence>
+                    <!-- Timefravær for eleven for et gitt fag -->
+                    <pifu_absence pifu_absence_mode="occurrence">
+                        <sourcedid>
+                            <source>mitt-sas@måne.kommune.no</source>
+                            <!-- org/system som tilegnet id'en -->
+                            <id>global_ID__Absence_283</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
+                        </sourcedid>
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-10-16</begin>
+                            <end>2012-10-16</end>
+                        </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
+                        <pifu_absence_value>0.75</pifu_absence_value>
+                        <comments>Value need to be reported in clock hours</comments>
+                    </pifu_absence>
+                    <!-- Timefravær for eleven -->
+                    <pifu_absence pifu_absence_mode="occurrence">
+                        <sourcedid>
+                            <source>mitt-sas@måne.kommune.no</source>
+                            <!-- org/system som tilegnet id'en -->
+                            <id>global_ID__Absence_647</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
+                        </sourcedid>
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-12-18</begin>
+                            <end>2012-10-18</end>
+                        </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
+                        <pifu_absence_value>0.75</pifu_absence_value>
+                        <comments>Value need to be reported in clock hours</comments>
+                    </pifu_absence>
+                    <pifu_absence pifu_absence_mode="occurrence">
+                        <sourcedid>
+                            <source>mitt-sas@måne.kommune.no</source>
+                            <!-- org/system som tilegnet id'en -->
+                            <id>global_ID__Absence_648</id>
+                            <!-- unik og varig id for denne fraværsinstansen -->
+                        </sourcedid>
+                        <pifu_absence_type>hours</pifu_absence_type>
+                        <timeframe>
+                            <begin>2012-12-18</begin>
+                            <end>2012-10-18</end>
+                        </timeframe>
+                        <!-- Timefravær må være i klokketimer -->
+                        <pifu_absence_value>0.75</pifu_absence_value>
+                        <comments>Value need to be reported in clock hours</comments>
+                    </pifu_absence>
+                </extension>
 
             </role>
         </member>
