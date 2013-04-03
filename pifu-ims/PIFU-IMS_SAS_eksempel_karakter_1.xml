@@ -271,12 +271,12 @@
                 <datetime>2012-08-16</datetime>
                 <!-- tidspunkt for etablering av medlemskap, ISO8601 -->
 
-                <!-- Tidsperiode for gyldighet -->
+                <!-- Definisjon av tidsperiode (skoleår) karakterene gjelder for --> 
                 <timeframe>
-                    <begin>2012-08-16</begin>
                     <!-- fra-dato -->
-                    <end>2013-06-30</end>
+                    <begin>2012-08-16</begin>
                     <!-- til-dato -->
+                    <end>2013-06-30</end>
                 </timeframe>
 
                 <!-- Karakter som ikke blir stående og ikke blir med eleven videre -->
