@@ -1058,7 +1058,7 @@
 	<!-- pifu_absence - Fraværsinformasjon på en person -->
 	<xs:complexType name="pifu_absence">
 		<xs:sequence>
-			<!-- (fraværsid - denne kan brukes på flere måter, kan knytte fraværet til en faggruppe; andre ting?) -->
+			<!-- (fraværsid - identifiserer en spesifikk fraværsoppføring i kildesystemet) -->
 			<xs:element ref="sourcedid" minOccurs="0"/>
 			<!-- (Dager/Timer - obligatorisk) -->
 			<xs:element name="pifu_absence_type" type="pifu_absence_type" nillable="false"/>
