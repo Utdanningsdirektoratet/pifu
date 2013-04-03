@@ -37,6 +37,26 @@
     <group>
         <sourcedid>
             <source>mitt-sas@måne.kommune.no</source>
+            <id>global_ID_org_17</id>
+        </sourcedid>
+        <grouptype>
+            <scheme>pifu-ims-go-org</scheme>
+            <typevalue level="2">skole</typevalue>
+        </grouptype>
+        <description>
+            <short>Måneflekken skole</short>
+        </description>	
+        <relationship relation="1"> 
+            <sourcedid>
+                <source>mitt-sas@måne.kommune.no</source>
+                <id>global_ID_org_2</id>
+            </sourcedid>
+            <label>Måne kommune</label>
+        </relationship>	
+    </group>
+    <group>
+        <sourcedid>
+            <source>mitt-sas@måne.kommune.no</source>
             <id>global_ID_fag_Astr001</id>
         </sourcedid>
         <grouptype>
