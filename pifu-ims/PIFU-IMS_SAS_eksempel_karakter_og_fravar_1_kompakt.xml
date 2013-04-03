@@ -121,23 +121,23 @@
             <idtype>1</idtype>
             <role roletype="01">
                 <status>1</status>
-                <interimresult resulttype="Termin 1">
+                <interimresult resulttype="Term 1">
                     <mode>Grade</mode>
                     <result>4</result>
                 </interimresult>
-                <interimresult resulttype="Nasjonal prøve">
+                <interimresult resulttype="National test">
                     <mode>Percentage</mode>
                     <result>58</result>
                 </interimresult>
-                <finalresult resulttype="Standpunkt">
+                <finalresult resulttype="Final grade">
                     <mode>Grade</mode>
                     <result>5</result>
                 </finalresult>
-                <finalresult resulttype="Skriftlig eksamen">
+                <finalresult resulttype="Exam grade written">
                     <mode>Grade</mode>
                     <result>5</result>
                 </finalresult>
-                <finalresult resulttype="Muntlig eksamen">
+                <finalresult resulttype="Exam grade oral">
                     <mode>Grade</mode>
                     <result>6</result>
                 </finalresult>
