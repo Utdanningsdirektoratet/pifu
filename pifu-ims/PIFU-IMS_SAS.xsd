@@ -204,6 +204,7 @@
 	<xs:simpleType name="useridtype">
 		<xs:restriction base="t_string32">
 			<xs:enumeration value="personNIN"/>
+			<xs:enumeration value="personNINencrypted"/>
 			<!-- typer userid brukt i PIFU-IMS -->
 			<xs:enumeration value="studentID"/>
 			<xs:enumeration value="workforceID"/>
