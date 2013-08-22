@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
 	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2013-04-03"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2013-08-22"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
 
@@ -203,9 +203,9 @@
 	</xs:complexType>
 	<xs:simpleType name="useridtype">
 		<xs:restriction base="t_string32">
+			<!-- typer userid brukt i PIFU-IMS -->
 			<xs:enumeration value="personNIN"/>
 			<xs:enumeration value="personNINencrypted"/>
-			<!-- typer userid brukt i PIFU-IMS -->
 			<xs:enumeration value="studentID"/>
 			<xs:enumeration value="workforceID"/>
 			<xs:enumeration value="username"/>
