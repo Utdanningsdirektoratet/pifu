@@ -1062,7 +1062,22 @@
 			<!-- (fraværsid - identifiserer en spesifikk fraværsoppføring i kildesystemet) -->
 			<xs:element ref="sourcedid" minOccurs="0"/>
 			<!-- (Dager/Timer - obligatorisk) -->
-			<xs:element name="pifu_absence_type" type="pifu_absence_type" nillable="false"/>
+			<xs:element name="pifu_absence_type" nillable="false">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="pifu_absence_type">
+							<xs:attribute name="pifu_absence_classification">
+								<xs:simpleType>
+									<xs:restriction base="t_string16">
+										<xs:enumeration value="valid"/>
+										<xs:enumeration value="invalid"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
 			<!-- (bruker standardelementet timeframe for å sette til og fra - obligatorisk, her kan en sette datoer og termin/adminperiod) -->
 			<xs:element name="timeframe" type="timeframe"/>
 			<!-- (fraværsværdi) -->
