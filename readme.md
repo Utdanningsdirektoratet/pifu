@@ -19,8 +19,3 @@ For utviklere som skal endre skjemaene eller eksempelfilene er det grenen 'devel
 grenen, gjør endringene og kjør en pull-request mot 'develop-latest' her.
 
 I tillegg til disse to hoved-grenene finnes det versjonerings-grener, men de kan de fleste bare se bort i fra.
-
-<<<<<<< HEAD
-=======
-
->>>>>>> master
