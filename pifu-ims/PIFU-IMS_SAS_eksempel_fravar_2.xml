@@ -7,9 +7,9 @@
 <!-- der mottakersystemet allerede har identifikatorene til personer og grupper           -->
 <!-- Vi kan derfor gjøre en minimalistisk overføring med bare membershipelementer         -->
 
-<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9 PIFU-IMS_SAS.xsd">
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0 PIFU-IMS_SAS.xsd">
 
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
@@ -102,7 +102,7 @@
                             <id>global_ID_Absence_251</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>days</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">days</pifu_absence_type>
                         <timeframe>
                             <begin>2012-08-16</begin>
                             <end>2013-01-15</end>
@@ -118,7 +118,7 @@
                             <id>global_ID_Absence_252</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="invalid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-08-16</begin>
                             <end>2013-01-15</end>
@@ -135,7 +135,7 @@
                             <id>global_ID_Absence_253</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>days</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">days</pifu_absence_type>
                         <timeframe>
                             <begin>2013-01-16</begin>
                             <end>2013-06-30</end>
@@ -152,7 +152,7 @@
                             <id>global_ID_Absence_254</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2013-01-16</begin>
                             <end>2013-06-30</end>
@@ -231,7 +231,7 @@
                             <id>global_ID_Absence_281</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="invalid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
@@ -248,7 +248,7 @@
                             <id>global_ID_Absence_282</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
@@ -265,7 +265,7 @@
                             <id>global_ID_Absence_283</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-10-16</begin>
                             <end>2012-10-16</end>
@@ -282,7 +282,7 @@
                             <id>global_ID_Absence_647</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-12-18</begin>
                             <end>2012-10-18</end>
@@ -298,7 +298,7 @@
                             <id>global_ID_Absence_648</id>
                             <!-- unik og varig id for denne fraværsinstansen -->
                         </sourcedid>
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="invalid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-12-18</begin>
                             <end>2012-10-18</end>
