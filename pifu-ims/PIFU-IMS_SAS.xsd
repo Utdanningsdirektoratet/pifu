@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
-	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2013-04-03"
+<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0"
+	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2013-09-18"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
 
@@ -203,8 +203,9 @@
 	</xs:complexType>
 	<xs:simpleType name="useridtype">
 		<xs:restriction base="t_string32">
-			<xs:enumeration value="personNIN"/>
 			<!-- typer userid brukt i PIFU-IMS -->
+			<xs:enumeration value="personNIN"/>
+			<xs:enumeration value="personNINencrypted"/>
 			<xs:enumeration value="studentID"/>
 			<xs:enumeration value="workforceID"/>
 			<xs:enumeration value="username"/>
@@ -1082,12 +1083,26 @@
 	</xs:complexType>
 	<xs:element name="pifu_absence" type="pifu_absence"/>
 
-	<xs:simpleType name="pifu_absence_type">
+	<xs:simpleType name="pifu_absence_type_value">
 		<xs:restriction base="t_string32">
 			<xs:enumeration value="days"/>
 			<xs:enumeration value="hours"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="pifu_absence_type">
+		<xs:simpleContent>
+			<xs:extension base="pifu_absence_type_value">	
+				<xs:attribute name="pifu_absence_classification">
+					<xs:simpleType>
+						<xs:restriction base="t_string16">
+							<xs:enumeration value="valid"/>
+							<xs:enumeration value="invalid"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>	
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:element name="pifu_absence_type" type="pifu_absence_type"/>
 
 	<xs:simpleType name="pifu_absence_value">

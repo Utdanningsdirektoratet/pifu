@@ -12,12 +12,8 @@ https://standard.iktsenteret.no/standard/enterprise
 
 ## Hvilken gren av prosjektet skal jeg bruke?
 Git opererer med greiner (branches) for forskjellige stadier og oppdelinger av et prosjekt. For de aller fleste av dere, 
-som bare skal bruke skjemaene og eksemplene, er det grenen 'master' dere skal hente filer fra. Der ligger siste 
-gjeldende versjon.
+som bare skal bruke skjemaene og eksemplene, er det grenen 'master' dere skal hente filer fra. Der ligger siste gjeldende versjon, for tiden PIFU-IMS 1.0.
 
-For utviklere som skal endre skjemaene eller eksempelfilene er det grenen 'develop-latest' som skal brukes. Fork denne
-grenen, gjør endringene og kjør en pull-request mot 'develop-latest' her.
+For utviklere som skal endre skjemaene eller eksempelfilene er det grenen 'develop-latest' som skal brukes. Fork dennegrenen, gjør endringene og kjør en pull-request mot 'develop-latest' her.
 
 I tillegg til disse to hoved-grenene finnes det versjonerings-grener, men de kan de fleste bare se bort i fra.
-
-

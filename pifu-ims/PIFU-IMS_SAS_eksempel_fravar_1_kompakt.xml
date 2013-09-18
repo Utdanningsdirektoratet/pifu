@@ -12,9 +12,9 @@
 <!-- Dette eksemplet er så kompakt som mulig og forutsetter at mottakersystemet ikke      -->
 <!-- trenger mer informasjon, identifikatorer osv.                                        -->
 
-<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9"
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-0.9 PIFU-IMS_SAS.xsd">
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0 PIFU-IMS_SAS.xsd">
     <properties lang="no">
         <datasource>mitt-sas@måne.kommune.no</datasource>
         <target>mitt-rapportsystem@måne.kommune.no</target>
@@ -91,7 +91,7 @@
                 <status>1</status>
                 <extension>
                     <pifu_absence pifu_absence_mode="aggregate">
-                        <pifu_absence_type>days</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">days</pifu_absence_type>
                         <timeframe>
                             <begin>2012-08-16</begin>
                             <end>2013-01-15</end>
@@ -99,7 +99,7 @@
                         <pifu_absence_value>3</pifu_absence_value>
                     </pifu_absence>
                     <pifu_absence pifu_absence_mode="aggregate">
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2012-08-16</begin>
                             <end>2013-01-15</end>
@@ -107,7 +107,7 @@
                         <pifu_absence_value>4</pifu_absence_value>
                     </pifu_absence>
                     <pifu_absence pifu_absence_mode="aggregate">
-                        <pifu_absence_type>days</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="invalid">days</pifu_absence_type>
                         <timeframe>
                             <begin>2013-01-16</begin>
                             <end>2013-06-30</end>
@@ -115,7 +115,7 @@
                         <pifu_absence_value>1</pifu_absence_value>
                     </pifu_absence>
                     <pifu_absence pifu_absence_mode="aggregate">
-                        <pifu_absence_type>hours</pifu_absence_type>
+                        <pifu_absence_type pifu_absence_classification="valid">hours</pifu_absence_type>
                         <timeframe>
                             <begin>2013-01-16</begin>
                             <end>2013-06-30</end>
