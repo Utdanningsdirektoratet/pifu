@@ -828,6 +828,8 @@
 			<xs:simpleType>
 				<xs:restriction base="t_string32">
 					<xs:enumeration value="organizationNumber"/>
+					<xs:enumeration value="municipalityNumber"/>
+					<xs:enumeration value="countyNumber"/>
 					<xs:enumeration value="vigoNumber"/>
 					<xs:enumeration value="domainName"/>
 					<xs:enumeration value="grepCode"/>
