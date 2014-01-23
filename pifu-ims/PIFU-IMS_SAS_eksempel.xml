@@ -510,6 +510,20 @@
 				<pifu_unique>1</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
 			</pifu_id>
 
+			<!-- Kommunenummer -->
+			<pifu_id type="municipalityNumber"> <!-- type: angir type id -->
+				<pifu_value>1308</pifu_value>
+				<pifu_scope>http://hotell.difi.no/?dataset=difi/geo/kommune</pifu_scope> <!-- gyldighetsområde --> 
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+			
+			<!-- Fylkesnummer på fylket der kommunen ligger-->
+			<pifu_id type="countyNumber"> <!-- type: angir type id -->
+				<pifu_value>13</pifu_value>
+				<pifu_scope>http://hotell.difi.no/?dataset=difi/geo/fylke</pifu_scope> <!-- gyldighetsområde --> 
+				<pifu_unique>0</pifu_unique> <!-- om id er unik for gruppe i gyldighetsområde -->
+			</pifu_id>
+
 			<!-- Juridisk navn -->
 			<pifu_name type="legalName"> <!-- type: angir type navn -->           
 				<pifu_value>Måne kommune</pifu_value>
