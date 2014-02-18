@@ -4,7 +4,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2014-01-22"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
-
+  
 	<!-- Typedefinisjoner. Alle IMS-elementer skal være en av disse typene -->
 	<xs:simpleType name="t_string1">
 		<xs:restriction base="xs:string">
