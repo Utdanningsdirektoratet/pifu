@@ -7,9 +7,9 @@
 <!-- der mottakersystemet allerede har identifikatorene til personer og grupper           -->
 <!-- Vi kan derfor gjøre en minimalistisk overføring med bare membershipelementer         -->
 
-<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0"
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.0 PIFU-IMS_SAS.xsd">
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1 PIFU-IMS_SAS.xsd">
 
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
