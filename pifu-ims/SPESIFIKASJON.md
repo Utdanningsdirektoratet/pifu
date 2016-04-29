@@ -2,7 +2,7 @@
 
 ## Spesifikasjon
 **Versjon:** 1.1  
-**Sist oppdatert:** 2014-07-04
+**Sist oppdatert:** 2016-04-29
 
 ## Innhold
 1. [Innledning](#innledning)
