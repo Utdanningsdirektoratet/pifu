@@ -30,12 +30,12 @@ Fødselsnummer i toveis-kryptert format|Fornavn|E-postadresse privat|Elevstatus 
 Identifikator i SAS|Etternavn|E-postadresse ved organisasjon|Foretrukket språkform
 Studentnummer|Kjønn|Telefonnummer (hovednummer)|Morsmål
 Brukernavn/passord om dette genereres i SAS|Fødselsdato (ikke utledet fra fødselsnummer)|Telefonnummer privat taletelefon|Peker til foresatte
-||Telefonnummer privat mobil/sms|Peker til bilde
-||Postadresse (hovedadresse)
-||Postadresse folkeregistrert
-||Postadresse Bosted
-||Postadresse Ferie/midlertidig
-||Tidsbegrensning på adresser
+|||Telefonnummer privat mobil/sms|Peker til bilde
+|||Postadresse (hovedadresse)
+|||Postadresse folkeregistrert
+|||Postadresse Bosted
+|||Postadresse Ferie/midlertidig
+|||Tidsbegrensning på adresser
 
 ### 1.2. Informasjon om lærere
 
@@ -46,22 +46,22 @@ Fødselsnummer i toveis-kryptert format|Fornavn|E-postadresse privat|Foretrukket
 Identifikator i SAS|Etternavn|E-postadresse ved organisasjon|Morsmål|
 Ansattnummer|Kjønn|Webside (hovedadresse)|Peker til kontaktpersoner/pårørende|
 Brukernavn/passord om dette genereres i SAS|Fødselsdato (ikke utledet fra fødselsnummer)|Webside privat|Peker til bilde|
-||Webside ved organisasjon|
-||Telefonnummer (hovednummer)|
-||Faksnummer (hovednummer)|
-||Mobil/SMS (hovednummer)|
-||Telefonnummer privat Taletelefon|
-||Telefonnummer privat Mobil/sms|
-||Telefonnummer ved org Taletelefon|
-||Telefonnummer ved org Mobil/sms|
-||Telefonnummer ved org Faks|
-||Telefonnummer ved org Sentralbord|
-||Postadresse (hovedadresse)|
-||Postadresse folkeregistrert|
-||Postadresse Bostedsadresse|
-||Postadresse Ferie/midlertidig|
-||Besøksadresse ved organisasjon|
-||Tidsbegrensning på adresser|
+|||Webside ved organisasjon|
+|||Telefonnummer (hovednummer)|
+|||Faksnummer (hovednummer)|
+|||Mobil/SMS (hovednummer)|
+|||Telefonnummer privat Taletelefon|
+|||Telefonnummer privat Mobil/sms|
+|||Telefonnummer ved org Taletelefon|
+|||Telefonnummer ved org Mobil/sms|
+|||Telefonnummer ved org Faks|
+|||Telefonnummer ved org Sentralbord|
+|||Postadresse (hovedadresse)|
+|||Postadresse folkeregistrert|
+|||Postadresse Bostedsadresse|
+|||Postadresse Ferie/midlertidig|
+|||Besøksadresse ved organisasjon|
+|||Tidsbegrensning på adresser|
 
 ### 1.3. Informasjon om andre ansatte
 
@@ -72,22 +72,22 @@ Fødselsnummer i toveis-kryptert format|Fornavn|E-postadresse privat|Foretrukket
 Identifikator i SAS|Etternavn|E-postadresse ved organisasjon|Morsmål|
 Ansattnummer|Kjønn|Webside (hovedadresse)|Peker til kontaktpersoner/pårørende|
 Brukernavn/passord om dette genereres i SAS|Fødselsdato (ikke utledet fra fødselsnummer)|Webside privat|Peker til bilde|
-||Webside ved organisasjon|
-||Telefonnummer (hovednummer)|
-||Faksnummer (hovednummer)|
-||Mobil/SMS (hovednummer)|
-||Telefonnummer privat Taletelefon|
-||Telefonnummer privat Mobil/sms|
-||Telefonnummer ved org Taletelefon|
-||Telefonnummer ved org Mobil/sms|
-||Telefonnummer ved org Faks|
-||Telefonnummer ved org Sentralbord|
-||Postadresse (hovedadresse)|
-||Postadresse folkeregistrert|
-||Postadresse Bostedsadresse|
-||Postadresse Ferie/midlertidig|
-||Besøksadresse ved organisasjon|
-||Tidsbegrensning på adresser|
+|||Webside ved organisasjon|
+|||Telefonnummer (hovednummer)|
+|||Faksnummer (hovednummer)|
+|||Mobil/SMS (hovednummer)|
+|||Telefonnummer privat Taletelefon|
+|||Telefonnummer privat Mobil/sms|
+|||Telefonnummer ved org Taletelefon|
+|||Telefonnummer ved org Mobil/sms|
+|||Telefonnummer ved org Faks|
+|||Telefonnummer ved org Sentralbord|
+|||Postadresse (hovedadresse)|
+|||Postadresse folkeregistrert|
+|||Postadresse Bostedsadresse|
+|||Postadresse Ferie/midlertidig|
+|||Besøksadresse ved organisasjon|
+|||Tidsbegrensning på adresser|
 
 ### 1.4. Informasjon om foresatte og kontaktpersoner/pårørende
 
@@ -107,11 +107,11 @@ Organisasjonsnummer|Navn|E-postadresse|Peker til seg selv (toppnode)|
 Domenenavn|Juridisk navn|Websted ekstern|
 Kommunenummer (og/eller)|Fullt navn|Websted intern/Intranett|
 Fylkesnummer|Kortnavn|Telefonnummer|
-||Faksnummer|
-||Postadresse|
-||Besøksadresse|
-||Leveringsadresse|
-||Fakturaadresse|
+|||Faksnummer|
+|||Postadresse|
+|||Besøksadresse|
+|||Leveringsadresse|
+|||Fakturaadresse|
 
 ### 2.2. Informasjon om skoler
 
@@ -120,12 +120,12 @@ Fylkesnummer|Kortnavn|Telefonnummer|
 Organisasjonsnummer/bedriftsnummer|Navn|E-postadresse|Peker til enheten over seg/skoleeier|
 Domenenavn|Juridisk navn|Websted ekstern|
 Vigonummer|Fullt navn|Websted intern/Intranett|
-|Kortnavn|Telefonnummer|
-||Faksnummer|
-||Postadresse|
-||Besøksadresse|
-||Leveringsadresse|
-||Fakturaadresse|  
+||Kortnavn|Telefonnummer|
+|||Faksnummer|
+|||Postadresse|
+|||Besøksadresse|
+|||Leveringsadresse|
+|||Fakturaadresse|  
 
 ### 2.3. Informasjon om basisgrupper
 
