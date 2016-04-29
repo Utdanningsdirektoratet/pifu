@@ -141,7 +141,7 @@ Vigonummer|Fullt navn|Websted intern/Intranett|
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
 Grepkode|Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
 Grepkode kortform||Sluttidspunkt|Websted|
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.5. Informasjon om kontaktlærergrupper
 
@@ -157,7 +157,7 @@ Grepkode kortform||Sluttidspunkt|Websted|
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
 Grepkode|Beskrivelse kort|Starttidspunkt||Peker til skole|
 Grepkode kortform||Sluttidspunkt||
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.7. Informasjon om utdanningsprogram
 
@@ -165,7 +165,7 @@ Grepkode kortform||Sluttidspunkt||
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
 Grepkode|Beskrivelse kort|Starttidspunkt||Peker til skole|
 Grepkode kortform||Sluttidspunkt||
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.8. Informasjon om programområde
 
@@ -173,7 +173,7 @@ Grepkode kortform||Sluttidspunkt||
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
 Grepkode|Beskrivelse kort|Starttidspunkt||Peker til skole|
 Grepkode kortform||Sluttidspunkt||
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.9. Informasjon om fag
 
@@ -181,7 +181,7 @@ Grepkode kortform||Sluttidspunkt||
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
 Grepkode|Beskrivelse kort|Starttidspunkt||Peker til skole|
 Grepkode kortform|Beskrivelse middels|Sluttidspunkt||
-|Beskrivelse full|Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+||Beskrivelse full|Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.10. Informasjon om personers medlemskap i grupperinger
 
@@ -189,5 +189,5 @@ Grepkode kortform|Beskrivelse middels|Sluttidspunkt||
 :------------------|:--------------------------------------|:----------------------------------------------------|:-----------------------------------|
 Peker til gruppeobjekt|Rolle i gruppa (elev, lærer, annet medlem)|Starttidspunkt|Resultater og karakterer for terminer, standpunkt og eksamen|
 Peker til et antall medlemmer|Status (Aktiv/inaktiv)|Sluttidspunkt|Fraværsdager og timer knyttet til fag og samlet|
-|Tidspunkt medlemskap/status ble sist ble endret|
-|Om dette er primærrollen til medlemmet i gruppa|
+||Tidspunkt medlemskap/status ble sist ble endret|
+||Om dette er primærrollen til medlemmet i gruppa|
