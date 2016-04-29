@@ -4,7 +4,7 @@
 
 * Følgende er kun endringer i dokumentasjonen.
 * La til undervisningsgruppe i utvidelsen for trinn, utdanningsprogram, programområde og fag. Det er behov for å knytte undervisningsgruppe til et fag, dette er en 1:1 relasjon. 
-* La til beskrivelse i <subrole> under <membership>. Utdypende beskrivelse av elevstatus og fagstatus for en elev på henholdsvis programområde og fag. 
+* La til beskrivelse i subrole under membership. Utdypende beskrivelse av elevstatus og fagstatus for en elev på henholdsvis programområde og fag. 
 
 **2014-07-04:**  
 
