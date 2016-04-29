@@ -14,9 +14,9 @@
   * 2.3. [Gruppeobjekter - organisasjoner, organisasjonsenheter og grupper](#gruppeobjekter)
     * 2.3.1. [Utvidelser på organisasjon og organisasjonsenhet](#goutvidelser1)
       * 2.3.1.1. [Vokabular for utvidelser på organisasjon og organisasjonsenhet](#goutvidelser1vokab)
-    * 2.3.2. [Utvidelser på basisgruppe, undervisningsgruppe og kontaktlærergruppe](#goutvidelser2)
-    * 2.3.3. [Utvidelser på trinn, utdanningsprogram, programområde og fag](#goutvidelser3)
-	    * 2.3.3.1. [Vokabularer for utvidelser på trinn, utdanningsprogram, programområde og fag](#goutvidelser3vokab)
+    * 2.3.2. [Utvidelser på basisgruppe og kontaktlærergruppe](#goutvidelser2)
+    * 2.3.3. [Utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe](#goutvidelser3)
+	    * 2.3.3.1. [Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe](#goutvidelser3vokab)
   * 2.4. [Medlemskapsobjekter](#medlemskapsobjekter)
     * 2.4.1. [Utvidelser på rolleobjektet](#moutvidelser)
   * 2.5. [Felles informasjonselementer](#finformasjonselementer)
@@ -253,11 +253,11 @@ P3.13.6.1|pifu_adr - type|*orgPostalAddress*|V|Enhetens postadresse.
 
 <a name="goutvidelser2"/>
 
-#### 2.3.2. Utvidelser på basisgruppe, undervisningsgruppe og kontaktlærergruppe
+#### 2.3.2. Utvidelser på basisgruppe og kontaktlærergruppe
 
 <a name="goutvidelser3"/>
 
-#### 2.3.3. Utvidelser på trinn, utdanningsprogram, programområde og fag
+#### 2.3.3. Utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe
 
 **Nr**|**Navn**|**Forklaring**|**Obl**|**Mult**|**Utdypning**|
 :-----|:-------|:-------------|:------|:-------|:------------|
@@ -269,7 +269,7 @@ P3.13.1.4|pifu_unique|Om verdien er unik|O||Settes til *1* om dette objektet er 
 
 <a name="goutvidelser3vokab"/>
 
-##### 2.3.3.1. Vokabularer for utvidelser på trinn, utdanningsprogram, programområde og fag
+##### 2.3.3.1. Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe
 
 **Nr**|**Navn**|**Verdi**|**Obl**|**Utdypning**|
 :-----|:-------|:--------|:------|:------------|
