@@ -131,25 +131,25 @@ Vigonummer|Fullt navn|Websted intern/Intranett|
 
 **Identifikatorer**|**Navn og basisinfo**|**Gyldighetsperiode**|**Kontaktinformasjon**|**Relasjon til andre grupperinger**|
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
-|Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
-||Sluttidspunkt|Websted|
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+||Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
+|||Sluttidspunkt|Websted|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.4. Informasjon om undervisningsgrupper
 
 **Identifikatorer**|**Navn og basisinfo**|**Gyldighetsperiode**|**Kontaktinformasjon**|**Relasjon til andre grupperinger**|
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
-|Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
-||Sluttidspunkt|Websted|
+Grepkode|Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
+Grepkode kortform||Sluttidspunkt|Websted|
 ||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.5. Informasjon om kontaktlærergrupper
 
 **Identifikatorer**|**Navn og basisinfo**|**Gyldighetsperiode**|**Kontaktinformasjon**|**Relasjon til andre grupperinger**|
 :------------------|:--------------------|:--------------------|:---------------------|:----------------------------------|
-|Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
-||Sluttidspunkt|Websted|
-||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
+||Beskrivelse kort|Starttidspunkt|E-postadresse|Peker til skole|
+|||Sluttidspunkt|Websted|
+|||Tekstlig beskrivelse for eksempel ’2007/2008’, ’V2008’|
 
 ### 2.6. Informasjon om trinn
 
