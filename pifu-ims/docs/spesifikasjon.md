@@ -178,9 +178,9 @@ P2.15.4.1|pifu_adr - type|*personRegisteredAddressPrivate*|V|Folkeregistrert adr
 
 **Nr**|**Navn**|**Forklaring**|**Obl**|**Mult**|**Utdypning**|
 :-----|:-------|:-------------|:------|:-------|:------------|
-3.1|recstatus|Type operasjon for denne personen|V||Benyttes ikke når datauttrekkstypen (1.2.5) er *full*. Ved andre typer skal denne være fylt ut etter IMS-E.
-3.2|comments|Kommentar til denne personen|V||Beskrivende tekst om personen. 
-3.3|sourcedid|Identifikator på personobjektet (kilde-id i kilde)|O|n|Se struktur og innhold i 5.6. Merk multiplisitet og mulighet for å endre sourcedid. 
+3.1|recstatus|Type operasjon for denne gruppen|V||Benyttes ikke når datauttrekkstypen (1.2.5) er *full*. Ved andre typer skal denne være fylt ut etter IMS-E.
+3.2|comments|Kommentar til denne gruppen|V||Beskrivende tekst om gruppen. 
+3.3|sourcedid|Identifikator på gruppeobjektet (kilde-id i kilde)|O|n|Se struktur og innhold i 5.6. Merk multiplisitet og mulighet for å endre sourcedid. 
 3.4|grouptype|Struktur for gruppetype|O|n|Struktur som viser hvilken type gruppe det er.
 3.4.1|scheme|Skjemaet som definerer gruppetyper|O||Settes til *pifu-ims-go-org* for grupper som er skoleeier eller skole, *pifu-ims-go-grp* for alle andre.
 3.4.2|typevalue|Typen gruppe|O||Tillatte verdier. For scheme *pifu-ims-go-org*: *skoleeier* – skoleeieren, *skole* – skoler. For scheme *pifu-ims-go-grp*: *basisgruppe* – basisgruppe/klasse, *undervisningsgruppe* – undervisningsgruppe i et fag, *kontaktlærergruppe* – gruppe med elever med en kontaktlærer, *trinn* – klassetrinn, *utdanningsprogram* – utdanningsprogram i videregående, *programområde* – progområde i videregående, *fag* – fag i læreplanen.
@@ -293,7 +293,7 @@ P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode
 4.3.4|role|Rolle medlemmet har i gruppen|O|n|Struktur for å beskrive et medlems rolle i gruppen.
 4.3.4.1|recstatus|Type operasjon for denne personen|V||Benyttes ikke når datauttrekkstypen (1.2.5) er *full*. Ved andre typer skal denne være fylt ut etter IMS-E.
 4.3.4.2|roletype|Medlemmets rolle|O||Obligatorisk her, valgfritt i IMS-E. Vokabular definert i IMS-E. De vanligste vil være *01* – elev, *02* – lærer/pedansatt og *04* – andre medlemmer.
-4.3.4.3|subrole|Utdypende rolle	|V||**1.** Dersom rolletypen er *elev* og gruppetypen er *fag* kan rollen (fagstatus) eleven har i faget utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *F* (fritatt), *M* (fagopplæring i skole), *N* (nettundervisning), *U* (utenlandsk utvekslingselev i Norge), *P* (privatist), *R* (realkompetansevurdert), *V* (voksen), *O* (oppdragsundervisning), *S* (Avbrutt opplæring i faget). **2.** Dersom rolletypen er *elev* og gruppetypen er *programområde* kan rollen (elevstatus) eleven har i programområdet utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *D* (deltidselev), *U* (utenlandsk utvekslingselev i Norge), *I* (norsk utvekslingselev i utlandet), *M* (fagopplæring i skole), *P* (privatist), *V* (voksen), *O* (oppdragsundervisning), *S* (avbrutt hele programområdet), *L* (lærling i programområdet (opplæring i bedrift)), *K* (lærekandidat i programområdet (opplæring i bedrift)).
+4.3.4.3|subrole|Utdypende rolle	|V||
 4.3.4.4|status|Status på medlemskap|O||Sier om relasjonen skal være aktiv eller ikke. Settes som regel til *1*, kan settes til *0* om relasjonen skal deaktiveres.
 4.3.4.6|comments|Kommentar på rolle 			
 4.3.4.7|datetime|Tidspunkt der gjeldende medlemskapstatus ble oppdatert|V
