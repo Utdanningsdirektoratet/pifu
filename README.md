@@ -3,7 +3,7 @@
 ## PIFU-IMS
 PIFU-IMS er en profil av IMS Enterprise 1.1 tilpasset PIFU og grunnopplæringen. Her finner du XSD-skjema for profilen og XML-eksempler.
 
-Se [PIFU-IMS 1.1 spesifikasjon](docs/spesifikasjon.md)
+Se [PIFU-IMS 1.1 spesifikasjon](pifu-ims/docs/spesifikasjon.md)
 
 For mer informasjon om PIFU se: 
 https://standard.iktsenteret.no/standard/personrelatert-informasjonsflyt-i-utdanning
