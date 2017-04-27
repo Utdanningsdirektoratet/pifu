@@ -155,17 +155,14 @@ P2.15.8.2|sourcedid|Peker til kontaktperson|V||Må fylles ut om kontaktperson er
 :-----|:-------|:--------|:------|:------------|
 P2.15.1.1|pifu_email - type	|*personEmailPrivate*|V|Privat e-postadresse.
 |||*personEmailAtOrg*|V|E-postadresse ved organisasjonen.
-|
 P2.15.2.1|pifu_url - type|*personURLPrivate*|V|Privat webside.
 |||*personURLAtOrg*|V|Webside ved organisasjonen.
-|
 P2.15.3.1|pifu_tel - type|*personTelephonePrivate*|V|Privat talenummer.
 |||*personMobilePrivate*|V|Privat nummer som kan motta SMS/MMS.
 |||*personTelephoneAtOrg*|V|Talenummer ved org.
 |||*personMobileAtOrg*|V|Nummer ved org som kan motta SMS/MMS.
 |||*personFaxAtOrg*|V|Nummer ved org som kan motta fax.
 |||*personSwitchboard*|V|Personens sentralbordnummer.
-|
 P2.15.4.1|pifu_adr - type|*personRegisteredAddressPrivate*|V|Folkeregistrert adresse.
 |||*personPostalAddressPrivate*|V|Privat bosted/postadresse.
 |||*personVisitorAddressAtOrg*|V|Besøksadresse ved org.
@@ -234,18 +231,15 @@ P3.13.1.1|pifu_id - type|*organizationNumber*|O|Organisasjonsnummer registrert i
 |||*domainName*|V|Domenenavn om det er tilgjengelig.
 |||*municipalityNumber*|V|Kommunenummeret til skoleeieren.
 |||*countyNumber*|V|Fylkesnummeret til skoleeieren, eller fylket der kommunen ligger.
-|
 P3.13.1.3|pifu_scope|*enhetsregistere*t|O|Settes når type er organizationNumber. Sannsynligvis skal da også pifu_unique settes til *1*.
 |||*vigo*|V|Settes når type er vigoNumber. Sannsynligvis skal da også pifu_unique settes til *1* om ikke en vigo-enhet er modellert som flere organisasjonsenheter.
 |||*.no*|V|Settes når type er domainname. Pifu_unique avhenger av om flere enheter har samme domainname knyttet til seg.
 |||*http://hotell.difi.no/?dataset=difi/geo/kommune*|V|Settes når type er municipalityNumber. Pifu_unique må som oftest settes til *0*, det avhenger av om flere enheter har samme municipalityNumber knyttet til seg, som er sannsynlig i de fleste use cases.
 |||*http://hotell.difi.no/?dataset=difi/geo/fylke*|V|Settes når type er countyNumber. Pifu_unique må som oftest settes til *0*, det avhenger av om flere enheter har samme countyNumber knyttet til seg, som er sannsynlig i de fleste use cases.
-|
 P3.13.2.1|pifu_name - type|*legalName*|O|Enhetens juridiske navn.
 |||*name*|V|Enhetens vanlige navn.
 |||*fullName*|V|Enhetens fulle navn.
 |||*shortName*|V|Enhetens kortnavn.
-|
 P3.13.6.1|pifu_adr - type|*orgPostalAddress*|V|Enhetens postadresse.
 |||*orgVisitorAddress*|V|Enhetens besøksadresse.
 |||*orgDeliveryAddress*|V|Enhetens leveringsadresse.
@@ -275,7 +269,6 @@ P3.13.1.4|pifu_unique|Om verdien er unik|O||Settes til *1* om dette objektet er 
 :-----|:-------|:--------|:------|:------------|
 P3.13.1.1|pifu_id - type|*grepCode*|O|PSI eller uuid til gruppen fra grep.
 |||*grepCodeShortForm*|V|Kortform eller NVB-kode til gruppen fra grep.
-|
 P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode og grepCodeShortForm. 
 
 <a name="medlemskapsobjekter"/>
