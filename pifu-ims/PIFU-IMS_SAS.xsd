@@ -583,6 +583,8 @@
 			<xs:enumeration value="utdanningsprogram"/>
 			<xs:enumeration value="programområde"/>
 			<xs:enumeration value="fag"/>
+			<xs:enumeration value="foresattegruppe"/>
+			<xs:enumeration value="språkopplæring"/>
 		</xs:restriction>
 	</xs:simpleType>
 
