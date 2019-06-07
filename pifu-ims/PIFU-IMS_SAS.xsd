@@ -840,6 +840,7 @@
 					<xs:enumeration value="municipalityNumber"/>
 					<xs:enumeration value="countyNumber"/>
 					<xs:enumeration value="vigoNumber"/>
+					<xs:enumeration value="gsiNumber"/>
 					<xs:enumeration value="domainName"/>
 					<xs:enumeration value="grepCode"/>
 					<xs:enumeration value="grepCodeShortForm"/>
