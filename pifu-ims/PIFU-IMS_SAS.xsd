@@ -213,6 +213,8 @@
 			<!-- typer userid brukt i PIFU-IMS -->
 			<xs:enumeration value="personNIN"/>
 			<xs:enumeration value="personNINencrypted"/>
+			<xs:enumeration value="personLIN"/>
+			<xs:enumeration value="personFIN"/>
 			<xs:enumeration value="studentID"/>
 			<xs:enumeration value="workforceID"/>
 			<xs:enumeration value="username"/>
