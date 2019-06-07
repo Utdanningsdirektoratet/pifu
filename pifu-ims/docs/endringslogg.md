@@ -1,5 +1,12 @@
 # Endringslogg
 
+**2019-06-07:**
+
+* Oppdatert til versjon 1.2.
+* La inn foresattegruppe og språkopplæring som nye gruppetyper i skjema pifu-ims-go-grp. 
+* La inn GSI som ny identifikatortype for organisasjon og organisasjonsenhet. 
+* La inn personLIN og personFIN som nye identifikatortyper for personer for henholdsvis lokalt gitte ID-nummer og VIGO-nr.
+
 **2016-04-29:**
 
 * Følgende er kun endringer i dokumentasjonen.
