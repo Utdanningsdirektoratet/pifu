@@ -1,8 +1,7 @@
 # PIFU-IMS
 
 ## Spesifikasjon
-**Versjon:** 1.1  
-**Sist oppdatert:** 2016-04-29
+**Versjon:** 1.2
 
 ## Innhold
 1. [Innledning](#innledning)
@@ -180,8 +179,8 @@ P2.15.4.1|pifu_adr - type|*personRegisteredAddressPrivate*|V|Folkeregistrert adr
 3.3|sourcedid|Identifikator på gruppeobjektet (kilde-id i kilde)|O|n|Se struktur og innhold i 5.6. Merk multiplisitet og mulighet for å endre sourcedid. 
 3.4|grouptype|Struktur for gruppetype|O|n|Struktur som viser hvilken type gruppe det er.
 3.4.1|scheme|Skjemaet som definerer gruppetyper|O||Settes til *pifu-ims-go-org* for grupper som er skoleeier eller skole, *pifu-ims-go-grp* for alle andre.
-3.4.2|typevalue|Typen gruppe|O||Tillatte verdier. For scheme *pifu-ims-go-org*: *skoleeier* – skoleeieren, *skole* – skoler. For scheme *pifu-ims-go-grp*: *basisgruppe* – basisgruppe/klasse, *undervisningsgruppe* – undervisningsgruppe i et fag, *kontaktlærergruppe* – gruppe med elever med en kontaktlærer, *trinn* – klassetrinn, *utdanningsprogram* – utdanningsprogram i videregående, *programområde* – progområde i videregående, *fag* – fag i læreplanen.
-3.4.2.1|level|Gruppetypens tilhørende kode|O||Gjenspeiler en kodeverdi for verdiene i 3.4.2. For schema *pifu-ims-go-org*: *1* – skoleeier, *2* – skole. For schema *pifu-ims-go-grp*: *1* – basisgruppe, *2* – undervisningsgruppe, *3* – kontaktlærergruppe, *4* – trinn, *5* – utdanningsprogram, *6* – programområde, *7* – fag.
+3.4.2|typevalue|Typen gruppe|O||Tillatte verdier. For scheme *pifu-ims-go-org*: *skoleeier* – skoleeieren, *skole* – skoler. For scheme *pifu-ims-go-grp*: *basisgruppe* – basisgruppe/klasse, *undervisningsgruppe* – undervisningsgruppe i et fag, *kontaktlærergruppe* – gruppe med elever med en kontaktlærer, *trinn* – klassetrinn, *utdanningsprogram* – utdanningsprogram i videregående, *programområde* – progområde i videregående, *fag* – fag i læreplanen, *foresattegruppe* - foresatte til barn som er elever med samme basisgruppetilhørighet, *språkopplæring* - gruppe med elever som mottar særskilt språkopplæring (§2.8/§3.12) med lærer. 
+3.4.2.1|level|Gruppetypens tilhørende kode|O||Gjenspeiler en kodeverdi for verdiene i 3.4.2. For schema *pifu-ims-go-org*: *1* – skoleeier, *2* – skole. For schema *pifu-ims-go-grp*: *1* – basisgruppe, *2* – undervisningsgruppe, *3* – kontaktlærergruppe, *4* – trinn, *5* – utdanningsprogram, *6* – programområde, *7* – fag, *8* - foresattegruppe, *9* - språkopplæring.
 3.5|description|Beskrivelse av gruppen|O		
 3.5.1|short|Kort navn på gruppen|O		
 3.5.2|long|Beskrivelse av gruppen|V||Begrenset til String256, så kan jo ikke bli så lang.
@@ -231,8 +230,10 @@ P3.13.1.1|pifu_id - type|*organizationNumber*|O|Organisasjonsnummer registrert i
 |||*domainName*|V|Domenenavn om det er tilgjengelig.
 |||*municipalityNumber*|V|Kommunenummeret til skoleeieren.
 |||*countyNumber*|V|Fylkesnummeret til skoleeieren, eller fylket der kommunen ligger.
+|||*gsiNumber*|V|Nummer fra Grunnskolens Informasjonssystem (GSI).
 P3.13.1.3|pifu_scope|*enhetsregistere*t|O|Settes når type er organizationNumber. Sannsynligvis skal da også pifu_unique settes til *1*.
 |||*vigo*|V|Settes når type er vigoNumber. Sannsynligvis skal da også pifu_unique settes til *1* om ikke en vigo-enhet er modellert som flere organisasjonsenheter.
+|||*gsi*|V|Settes når type er gsiNumber. Sannsynligvis skal da også pifu_unique settes til *1*.
 |||*.no*|V|Settes når type er domainname. Pifu_unique avhenger av om flere enheter har samme domainname knyttet til seg.
 |||*http://hotell.difi.no/?dataset=difi/geo/kommune*|V|Settes når type er municipalityNumber. Pifu_unique må som oftest settes til *0*, det avhenger av om flere enheter har samme municipalityNumber knyttet til seg, som er sannsynlig i de fleste use cases.
 |||*http://hotell.difi.no/?dataset=difi/geo/fylke*|V|Settes når type er countyNumber. Pifu_unique må som oftest settes til *0*, det avhenger av om flere enheter har samme countyNumber knyttet til seg, som er sannsynlig i de fleste use cases.
@@ -348,7 +349,7 @@ P4.3.3.13.2.7|comments|Kommentarer|V||Kommentar for fraværet.
 5.7|email|E-mail adresse med høyest prioritet/hovedadresse|-|-
 5.8|url|Webside med høyest prioritet/hovedadresse|V||Ikke bruk relative adresser, bare fulle adresser.
 5.9|userid|Personens identifikator|-|-|Selve verdien på identifikatoren, for eksempel brukernavn.
-5.9.1|useridtype|Type identifikator|O||Oblikatorisk her, valgfri i IMS. Identifikatorer som skal fylles ut i dette uttrekket om informasjonen finnes er: *personNIN* – fødselsnummer/d-nummer eller lignende, *personNINencrypted* – personNIN kryptert slik at avsender kan dekryptere innholdet til en personNIN (Kryperingsmetode avtales mellom avsender og mottaker utenfor overføringen), *studentID* – Elevnummer, *workforceID* – ansattnummer, *username* – brukernavn, *sisID* – systemidentifikator i SAS/SIS(IPOS/OID).
+5.9.1|useridtype|Type identifikator|O||Oblikatorisk her, valgfri i IMS. Identifikatorer som skal fylles ut i dette uttrekket om informasjonen finnes er: *personNIN* – fødselsnummer/d-nummer eller lignende, *personNINencrypted* – personNIN kryptert slik at avsender kan dekryptere innholdet til en personNIN (Kryperingsmetode avtales mellom avsender og mottaker utenfor overføringen), *personLIN* - lokalt gitt ID-nummer, *personFIN* - VIGO-nr, *studentID* – Elevnummer, *workforceID* – ansattnummer, *username* – brukernavn, *sisID* – systemidentifikator i SAS/SIS(IPOS/OID).
 5.9.2|password|Passord|V||For userid av typen username kan passord settes.
 5.9.3|pw.encryptiontype	||V||Om passord er satt skal krypterinsmetoden angis her: *passwordMD5* – MD5-hash er benyttet, *passwordPlain* – passordet er i klartekst.
 5.10|timeframe|Gyldighetsområde i tid for et objekt|-|-|Brukes for å avgrense et objekt i tid, for eksempel et semester
