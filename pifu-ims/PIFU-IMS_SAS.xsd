@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1"
-	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2014-07-04"
+<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2"
+	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2019-06-07"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
   
