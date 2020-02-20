@@ -9,9 +9,9 @@
 <!-- Det er derfor nødvendig å sende grunnleggende person- og gruppeinformasjon som en    -->
 <!-- del av overføringen.                                                                 -->
 
-<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1"
+<enterprise xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.1 PIFU-IMS_SAS.xsd">
+    xsi:schemaLocation="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2 PIFU-IMS_SAS.xsd">
 
     <!-- ===================================================================== -->
     <!-- ===================================================================== -->
