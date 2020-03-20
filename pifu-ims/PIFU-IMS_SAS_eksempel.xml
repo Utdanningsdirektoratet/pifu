@@ -733,7 +733,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>Basisgruppe 7A ved Måneflekken skole</short> <!-- kort beskrivelse -->
+			<short>7A</short>
+			<long>Basisgruppe 7A</long>
+			<full>Basisgruppe 7A ved Måneflekken skole</full> 
 		</description>	
 		
 		<!-- Tidsperiode for gyldighet -->
@@ -762,16 +764,16 @@
 		
 	</group>
 
-	<!-- Informasjon om undervisningsgruppa i Astronomi ved Måneflekken skole -->
+	<!-- Informasjon om undervisningsgruppa i Matematikk på 8. årstrinn ved Måneflekken skole -->
 	<group> 
 
 		<!-- Kommentar om gruppe -->
-		<comments lang="no">Informasjon om undervisningsgruppa i Astronomi ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		<comments lang="no">Informasjon om undervisningsgruppa i Matematikk på 8. årstrinn ved Måneflekken skole</comments> <!-- lang: angir språk på kommentar, ISO639 -->
 
 		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
 		<sourcedid>
 			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-			<id>global_ID_gr_Astr001_Måneflekken07</id> <!-- unik og varig id -->
+			<id>global_ID_gr_MAT0008_Måneflekken08</id> <!-- unik og varig id -->
 		</sourcedid>
 
 		<!-- Type gruppe -->
@@ -782,7 +784,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>Undervisningsgruppa i Astronomi ved Måneflekken skole</short> <!-- kort beskrivelse -->
+			<short>MAT0008-8A</short>
+			<long>Matematikk 8A</long>
+			<full>Undervisningsgruppe i Matematikk på 8. årstrinn for 8A ved Måneflekken skole</full>
 		</description>	
 
 		<!-- Tidsperiode for gyldighet -->
@@ -793,10 +797,10 @@
 		</timeframe>
 
 		<!-- E-post for å kontakte gruppa -->
-		<email>astronomi07@måneflekken.skole.no</email>
+		<email>MAT0008@måneflekken.skole.no</email>
 
 		<!-- Gruppas url -->
-		<url>http://www.måneflekken.skole.no/fag/astronomi07</url>
+		<url>http://www.måneflekken.skole.no/fag/MAT0008</url>
 
 		<!-- Relasjon til Måneflekken skole -->
 		<relationship relation="1"> <!-- 1-parent, 3-also known as -->
@@ -831,7 +835,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>Kontaktlærergruppa til Janne Stor ved Måneflekken skole</short> <!-- kort beskrivelse -->
+			<short>Kontaktlærer Janne Stor</short>
+			<long>Kontaktlærergruppe for Janne Stor>/long>
+			<full>Kontaktlærergruppe for Janne Stor ved Måneflekken skole</full>
 		</description>	
 		
 		<!-- Tidsperiode for gyldighet -->
@@ -874,7 +880,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>Måneflekken trinn 7</short> <!-- kort beskrivelse -->
+			<short>7</short>
+			<long>7. trinn</long>
+			<full>7. trinn ved Måneflekken skole</full>
 		</description>	
 		
 		
@@ -1022,16 +1030,16 @@
 	</group>
 	
 	
-	<!-- Informasjon om faget Astronomi -->
+	<!-- Informasjon om faget Matematikk på 8. årstrinn -->
 	<group>
 		
 		<!-- Kommentar om gruppe -->
-		<comments lang="no">Informasjon om faget Astronomi</comments> <!-- lang: angir språk på kommentar, ISO639 -->
+		<comments lang="no">Informasjon om faget Matematikk på 8. årstrinn</comments> <!-- lang: angir språk på kommentar, ISO639 -->
 		
 		<!-- Unik og varig id for gruppa, brukt ifm informasjonsutveksling -->
 		<sourcedid>
 			<source>mitt-sas@måne.kommune.no</source> <!-- org/system som tilegnet id'en -->
-			<id>global_ID_fag_Astr001</id> <!-- unik og varig id -->
+			<id>global_ID_fag_MAT0008</id> <!-- unik og varig id -->
 		</sourcedid>
 		
 		<!-- Type gruppe -->
@@ -1042,9 +1050,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>Astr001_Vår2007</short> <!-- kort beskrivelse -->
-			<long>2-timers valgfag i 7. klasse. Her lærer vi om solsystemer og planeter. Ingen forkunnskaper nødvendig.</long> <!-- lang beskrivelse -->
-			<full>Astronomi - et valgfag for elever på 7. årstrinn i vårsemesteret. Tema: en kort innføring i solsystemer og planter. Særlig fokus er det på vårt eget solsystem og på bla bla bla bla bla.... Vurderingsform: mappevurdering. I tillegg kan elevene trekkes ut til muntlig eksamen. Det gis tallkarakterer. </full> <!-- full beskrivelse -->
+			<short>MAT0008</short> <!-- kort beskrivelse -->
+			<long>Matematikk</long> <!-- lang beskrivelse -->
+			<full>Matematikk for 8. årstrinn</full> <!-- full beskrivelse -->
 		</description>	
 		
 		
