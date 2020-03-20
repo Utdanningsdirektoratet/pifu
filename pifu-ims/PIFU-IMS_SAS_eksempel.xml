@@ -836,7 +836,7 @@
 		<!-- Beskrivelse -->
 		<description>
 			<short>Kontaktlærer Janne Stor</short>
-			<long>Kontaktlærergruppe for Janne Stor>/long>
+			<long>Kontaktlærergruppe for Janne Stor</long>
 			<full>Kontaktlærergruppe for Janne Stor ved Måneflekken skole</full>
 		</description>	
 		
@@ -1050,9 +1050,9 @@
 		
 		<!-- Beskrivelse -->
 		<description>
-			<short>MAT0008</short> <!-- kort beskrivelse -->
-			<long>Matematikk</long> <!-- lang beskrivelse -->
-			<full>Matematikk for 8. årstrinn</full> <!-- full beskrivelse -->
+			<short>MAT0008</short>
+			<long>Matematikk</long>
+			<full>Matematikk for 8. årstrinn</full>
 		</description>	
 		
 		
