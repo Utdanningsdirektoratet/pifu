@@ -591,6 +591,13 @@
 			<xs:enumeration value="fag"/>
 			<xs:enumeration value="foresattegruppe"/>
 			<xs:enumeration value="språkopplæring"/>
+			<xs:enumeration value="sammensattgruppe"/>
+			<xs:enumeration value="elevråd"/>
+			<xs:enumeration value="fau"/>
+			<xs:enumeration value="skoleutvalg"/>
+			<xs:enumeration value="skolemiljøutvalg"/>
+			<xs:enumeration value="sfo"/>
+			<xs:enumeration value="eksamensgruppe"/>
 		</xs:restriction>
 	</xs:simpleType>
 
