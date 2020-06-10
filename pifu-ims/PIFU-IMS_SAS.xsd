@@ -1102,6 +1102,8 @@
 				<xs:restriction base="t_string32">
 					<xs:enumeration value="nextOfKin"/>
 					<xs:enumeration value="guardian"/>
+					<xs:enumeration value="fosterParent"/>
+					<xs:enumeration value="closeRelative"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
