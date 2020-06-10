@@ -697,7 +697,43 @@
 	<!-- role - rolle i member -->
 	<xs:complexType name="role">
 		<xs:sequence>
-			<xs:element name="subrole" type="t_string32" minOccurs="0"/>
+			<xs:element name="subrole" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string32">
+						<xs:enumeration value="faglærer"/>
+						<xs:enumeration value="lærerstudent"/>
+						<xs:enumeration value="vikar"/>
+						<xs:enumeration value="rådgiver"/>
+						<xs:enumeration value="kontormedarbeider"/>
+						<xs:enumeration value="skolehelsetjeneste"/>
+						<xs:enumeration value="skolebiblioteksansvarlig"/>
+						<xs:enumeration value="vaktmester"/>
+						<xs:enumeration value="renholdsarbeider"/>
+						<xs:enumeration value="foresattrepresentant"/>
+						<xs:enumeration value="rektor"/>
+						<xs:enumeration value="inspektør"/>
+						<xs:enumeration value="iktansvarlig"/>
+						<xs:enumeration value="sosiallærer"/>
+						<xs:enumeration value="sensor"/>
+						<xs:enumeration value="pptansatt"/>
+						<xs:enumeration value="E"/>
+						<xs:enumeration value="A"/>
+						<xs:enumeration value="F"/>
+						<xs:enumeration value="M"/>
+						<xs:enumeration value="N"/>
+						<xs:enumeration value="U"/>
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="R"/>
+						<xs:enumeration value="V"/>
+						<xs:enumeration value="O"/>
+						<xs:enumeration value="S"/>
+						<xs:enumeration value="D"/>
+						<xs:enumeration value="I"/>
+						<xs:enumeration value="L"/>
+						<xs:enumeration value="K"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="status">
 				<xs:simpleType>
 					<xs:restriction base="t_integer1">
