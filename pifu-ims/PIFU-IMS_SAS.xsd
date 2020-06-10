@@ -219,6 +219,10 @@
 			<xs:enumeration value="workforceID"/>
 			<xs:enumeration value="username"/>
 			<xs:enumeration value="sisID"/>
+			<xs:enumeration value="feideID"/>
+			<xs:enumeration value="dufNumber"/>
+			<xs:enumeration value="dNumber"/>
+			<xs:enumeration value="microsoftUPN"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="userid" type="userid"/>
