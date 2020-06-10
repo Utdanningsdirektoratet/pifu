@@ -866,6 +866,7 @@
 			<xs:element ref="pifu_hasContactPerson" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="pifu_primaryRelation" minOccurs="0"/>
 			<xs:element ref="pifu_absence" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_schoolType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extension"/>
@@ -1172,5 +1173,18 @@
 		<xs:restriction base="t_decimal8p4_wn"/>
 	</xs:simpleType>
 	<xs:element name="pifu_absence_value" type="pifu_absence_value"/>
+
+	<!-- pifu_schoolType - ulike typer institusjoner i skolen -->
+	<xs:simpleType name="pifu_schoolType">
+		<xs:restriction base="t_string128">
+			<xs:enumeration value="barneskole"/> <!-- Skole for 1.-7. trinn -->
+			<xs:enumeration value="ungdomsskole"/> <!-- Skole for 8.-10. trinn -->
+			<xs:enumeration value="barneOgUngdomsskole"/> <!-- Skole for 1.-10. trinn -->
+			<xs:enumeration value="videregående"/> <!-- Skole for vg1, vg2, vg3 og vg4 (påbygg) -->
+			<xs:enumeration value="barnehage"/> <!-- Barnehage -->
+			<xs:enumeration value="sfo"/> <!-- Skolefritidsordning (1.-4. trinn) -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="pifu_schoolType" type="pifu_schoolType"/>
 
 </xs:schema>
