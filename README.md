@@ -1,15 +1,15 @@
 # PIFU-IMS
 PIFU-IMS er en profil av [IMS Enterprise 1.1](http://www.imsglobal.org/enterprise/index.html) tilpasset PIFU og grunnopplæringen. På dette repositoriet forvaltes spesifikasjon og XSD-skjema for profilen samt XML-eksempler.
 
-Gjeldende versjon av PIFU-IMS er 1.2.
+Gjeldende versjon av PIFU-IMS er 1.3.
 
-[PIFU-IMS 1.2 spesifikasjon](pifu-ims/docs/spesifikasjon.md)
+[PIFU-IMS 1.3 spesifikasjon](pifu-ims/docs/spesifikasjon.md)
 
 [Endringslogg](pifu-ims/docs/endringslogg.md)
 
 ## Hvilken gren av prosjektet skal jeg bruke?
 Git opererer med greiner (branches) for forskjellige stadier og oppdelinger av et prosjekt. For de aller fleste av dere, 
-som bare skal bruke skjemaene og eksemplene, er det grenen 'master' dere skal hente filer fra. Der ligger siste gjeldende versjon, for tiden PIFU-IMS 1.2.
+som bare skal bruke skjemaene og eksemplene, er det grenen 'master' dere skal hente filer fra. Der ligger siste gjeldende versjon, for tiden PIFU-IMS 1.3.
 
 # PIFU
 
