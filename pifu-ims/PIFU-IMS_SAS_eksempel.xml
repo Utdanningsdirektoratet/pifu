@@ -1363,7 +1363,6 @@
 
 			<!-- Medlemmets rolle i gruppa -->
 			<role roletype="01"> <!-- roletype: 01-Learner, 02-Instructor, 03-Content Developer, 04-Member, 05-Manager, 06-Mentor, 07-Administrator, 08-Teaching Assistant -->
-				<subrole>elev</subrole> <!-- subrolle -->
 				<status>1</status> <!-- om medlemmet er aktiv i gruppa, 0-'Inactive', 1-'Active' -->
 				<datetime>2007-01-07</datetime> <!-- tidspunkt for etablering av medlemskap, ISO8601 -->				
 
