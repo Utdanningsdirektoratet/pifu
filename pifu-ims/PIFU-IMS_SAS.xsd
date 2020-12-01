@@ -220,8 +220,6 @@
 			<xs:enumeration value="username"/>
 			<xs:enumeration value="sisID"/>
 			<xs:enumeration value="feideID"/>
-			<xs:enumeration value="dufNumber"/>
-			<xs:enumeration value="dNumber"/>
 			<xs:enumeration value="microsoftUPN"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -706,7 +704,7 @@
 						<xs:enumeration value="rådgiver"/>
 						<xs:enumeration value="kontormedarbeider"/>
 						<xs:enumeration value="skolehelsetjeneste"/>
-						<xs:enumeration value="skolebiblioteksansvarlig"/>
+						<xs:enumeration value="skolebibliotekar"/>
 						<xs:enumeration value="vaktmester"/>
 						<xs:enumeration value="renholdsarbeider"/>
 						<xs:enumeration value="foresattrepresentant"/>
@@ -866,7 +864,7 @@
 			<xs:element ref="pifu_hasContactPerson" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="pifu_primaryRelation" minOccurs="0"/>
 			<xs:element ref="pifu_absence" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="pifu_schoolType" minOccurs="0"/>
+			<xs:element ref="pifu_schoolType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extension"/>
@@ -894,6 +892,7 @@
 					<xs:enumeration value="domainName"/>
 					<xs:enumeration value="grepCode"/>
 					<xs:enumeration value="grepCodeShortForm"/>
+					<xs:enumeration value="grepCodeGradeLevel"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -1103,8 +1102,6 @@
 				<xs:restriction base="t_string32">
 					<xs:enumeration value="nextOfKin"/>
 					<xs:enumeration value="guardian"/>
-					<xs:enumeration value="fosterParent"/>
-					<xs:enumeration value="closeRelative"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -1179,7 +1176,6 @@
 		<xs:restriction base="t_string128">
 			<xs:enumeration value="barneskole"/> <!-- Skole for 1.-7. trinn -->
 			<xs:enumeration value="ungdomsskole"/> <!-- Skole for 8.-10. trinn -->
-			<xs:enumeration value="barneOgUngdomsskole"/> <!-- Skole for 1.-10. trinn -->
 			<xs:enumeration value="videregående"/> <!-- Skole for vg1, vg2, vg3 og vg4 (påbygg) -->
 			<xs:enumeration value="barnehage"/> <!-- Barnehage -->
 			<xs:enumeration value="sfo"/> <!-- Skolefritidsordning (1.-4. trinn) -->

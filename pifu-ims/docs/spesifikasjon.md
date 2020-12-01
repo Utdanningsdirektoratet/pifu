@@ -14,8 +14,8 @@
     * 2.3.1. [Utvidelser på organisasjon og organisasjonsenhet](#goutvidelser1)
       * 2.3.1.1. [Vokabular for utvidelser på organisasjon og organisasjonsenhet](#goutvidelser1vokab)
     * 2.3.2. [Utvidelser på basisgruppe og kontaktlærergruppe](#goutvidelser2)
-    * 2.3.3. [Utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe](#goutvidelser3)
-	    * 2.3.3.1. [Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag og undervisningsgruppe](#goutvidelser3vokab)
+    * 2.3.3. [Utvidelser på trinn, utdanningsprogram, programområde, fag, undervisningsgruppe, sammensattgruppe, sfo og eksamensgruppe](#goutvidelser3)
+	    * 2.3.3.1. [Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag, undervisningsgruppe, sammensattgruppe, sfo og eksamensgruppe](#goutvidelser3vokab)
   * 2.4. [Medlemskapsobjekter](#medlemskapsobjekter)
     * 2.4.1. [Utvidelser på rolleobjektet](#moutvidelser)
   * 2.5. [Felles informasjonselementer](#finformasjonselementer)
@@ -143,7 +143,7 @@ P2.15.6.1|source|Språkstandard brukt|V||Må fylles ut om foretrukket språk er 
 P2.15.7|pifu_nativeTongue|Morsmål|V|n|Helst to-bokstavers kode, men tre-bokstaver for de som ikke har to i standardene under.
 P2.15.7.1|source|Språkstandard brukt|V||Må fylles ut om morsmål er definert. Verdier er *ISO 639-1*, *ISO 639-2* eller *ISO 639-3* avhengig av hvor P2.15.7 er definert.
 P2.15.8|pifu_hasContactPerson|Kontaktperson|V|n|Peker på en sourcedid til kontaktpersoner av forskjellige typer.
-P2.15.8.1|type|Type kontaktperson|V||Må fylles ut om kontaktperson er definert. Verdier er *nextOfKin* – pårørende, *guardian* – foresatt, *fosterParent* - fosterforelder og *closeRelative* - nær familie som tante, onkel, besteforelder og steforelder. 
+P2.15.8.1|type|Type kontaktperson|V||Må fylles ut om kontaktperson er definert. Verdier er *nextOfKin* – pårørende og *guardian* – foresatt, fosterforelder eller annen person som formelt er stedfortreder for foresatte.
 P2.15.8.2|sourcedid|Peker til kontaktperson|V||Må fylles ut om kontaktperson er definert. Samme struktur som 5.6.
 
 <a name="poutvidelservokab"/>
@@ -218,7 +218,7 @@ P3.13.5|pifu_tel|Telefonnummer til enheten|V|n
 P3.13.5.1|type|Typen telefonnummer|V||For org/ou brukes *orgTelephone* – enhetens telefonmottak, *orgFax* – enhetens faks.
 P3.13.6|pifu_adr|Adresser til enheten|V|n|Adressestrukturen følger 2.10 adr.
 P3.13.6.1|type|Typen adresse|V||Se vokabular i tabellen under.
-P3.13.7|pifu_schoolType|Typen skole|V||Tillate verdier: *barneskole* (1.-7. trinn), *ungdomsskole* (8.-10. trinn), *barneOgUngdomsskole* (1.-10. trinn), *videregående* (vg1, vg2, vg3 og påbygg), *barnehage* (barnehage) og *sfo* (skolefritidsordning).
+P3.13.7|pifu_schoolType|Typen skole|V|n|Tillate verdier: *barneskole* (1.-7. trinn), *ungdomsskole* (8.-10. trinn), *videregående* (vg1, vg2, vg3 og påbygg), *barnehage* (barnehage) og *sfo* (skolefritidsordning).
 
 <a name="goutvidelser1vokab"/>
 
@@ -253,7 +253,7 @@ P3.13.6.1|pifu_adr - type|*orgPostalAddress*|V|Enhetens postadresse.
 
 <a name="goutvidelser3"/>
 
-#### 2.3.3. Utvidelser på trinn, utdanningsprogram, programområde, fag, undervisningsgruppe, sammensattgruppe og eksamensgruppe
+#### 2.3.3. Utvidelser på trinn, utdanningsprogram, programområde, fag, undervisningsgruppe, sammensattgruppe, sfo og eksamensgruppe
 
 **Nr**|**Navn**|**Forklaring**|**Obl**|**Mult**|**Utdypning**|
 :-----|:-------|:-------------|:------|:-------|:------------|
@@ -265,13 +265,14 @@ P3.13.1.4|pifu_unique|Om verdien er unik|O||Settes til *1* om dette objektet er 
 
 <a name="goutvidelser3vokab"/>
 
-##### 2.3.3.1. Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag,  undervisningsgruppe, sammensattgruppe og eksamensgruppe
+##### 2.3.3.1. Vokabularer for utvidelser på trinn, utdanningsprogram, programområde, fag, undervisningsgruppe, sammensattgruppe, sfo og eksamensgruppe
 
 **Nr**|**Navn**|**Verdi**|**Obl**|**Utdypning**|
 :-----|:-------|:--------|:------|:------------|
-P3.13.1.1|pifu_id - type|*grepCode*|O|PSI eller uuid til gruppen fra grep.
-|||*grepCodeShortForm*|V|Kortform eller NVB-kode til gruppen fra grep.
-P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode og grepCodeShortForm. 
+P3.13.1.1|pifu_id - type|*grepCode*|O|PSI eller uuid til gruppen fra grep. Benyttes som kobling til gruppas fag i Grep-kodeverket.
+|||*grepCodeShortForm*|V|Kortform eller NVB-kode til gruppen fra grep. Benyttes som kobling til gruppas fag i Grep-kodeverket.
+|||*grepCodeGradeLevel*|V|0 eller flere koblinger til hvilket trinn gruppa tilhører.
+P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode, grepCodeShortForm og grepCodeGradeLevel.
 
 <a name="medlemskapsobjekter"/>
 
@@ -279,7 +280,7 @@ P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode
 
 **Nr**|**Navn**|**Forklaring**|**Obl**|**Mult**|**Utdypning**|
 :-----|:-------|:-------------|:------|:-------|:------------|
-4.1|comments|Kommentar på medlemskapsobjektet|V||**Skal vi gjøre denne obligatorisk? Skal vi fjerne her?**
+4.1|comments|Kommentar på medlemskapsobjektet|V||
 4.2|sourcedid|IDen på gruppen medlemskapene peker på|O||Her peker en på IDen til gruppen (org/ou/fag/basisgruppe osv).
 4.3|member|Medlemmene i gruppen	|O|n|Struktur for medlemmer i gruppen.
 4.3.1|comments|Kommentar for dette medlemmet|V	
@@ -288,7 +289,7 @@ P3.13.1.3|pifu_scope|*grep - levende læreplaner*|O|Settes når type er grepCode
 4.3.4|role|Rolle medlemmet har i gruppen|O|n|Struktur for å beskrive et medlems rolle i gruppen.
 4.3.4.1|recstatus|Type operasjon for denne personen|V||Benyttes ikke når datauttrekkstypen (1.2.5) er *full*. Ved andre typer skal denne være fylt ut etter IMS-E.
 4.3.4.2|roletype|Medlemmets rolle|O||Obligatorisk her, valgfritt i IMS-E. Vokabular definert i IMS-E med følgende oversettelse: *01* – elev, *02* – lærer/pedansatt, *03* - content developer, *04* – andre, *05* - skoleledelse, *06* - kontaktlærer, *07* - administrator, *08* - assistent.
-4.3.4.3|subrole|Utdypende rolle	|V||**Denne bryter med IMS Enterprise 1.1. Det er et behov å ha definerte verdier å velge mellom.** Underroller for roletype 4.3.4.2. Tillatte verdier: for roletype *02* - *faglærer*, *lærerstudent*, *vikar*. For roletype *04* - *rådgiver*, *kontormedarbeider*, *skolehelsetjeneste*, *skolebibliotekansvarlig*, *vaktmester*, *renholdsarbeider*, *sosiallærer*, *sensor*, *pptansatt*. For roletype *05* - *rektor*, *inspektør*. For roletype *07* - *iktansvarlig*.<br /> **Fortsatt støtte for verdier fra Vigo brukerhåndbok for Sats/Extens** <br /> **1.** Dersom rolletypen er *elev* og gruppetypen er *fag* kan rollen (fagstatus) eleven har i faget utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *F* (fritatt), *M* (fagopplæring i skole), *N* (nettundervisning), *U* (utenlandsk utvekslingselev i Norge), *P* (privatist), *R* (realkompetansevurdert), *V* (voksen), *O* (oppdragsundervisning), *S* (Avbrutt opplæring i faget). **2.** Dersom rolletypen er *elev* og gruppetypen er *programområde* kan rollen (elevstatus) eleven har i programområdet utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *D* (deltidselev), *U* (utenlandsk utvekslingselev i Norge), *I* (norsk utvekslingselev i utlandet), *M* (fagopplæring i skole), *P* (privatist), *V* (voksen), *O* (oppdragsundervisning), *S* (avbrutt hele programområdet), *L* (lærling i programområdet (opplæring i bedrift)), *K* (lærekandidat i programområdet (opplæring i bedrift)).
+4.3.4.3|subrole|Utdypende rolle	|V||**Denne bryter med IMS Enterprise 1.1. Det er et behov å ha definerte verdier å velge mellom.** Underroller for roletype 4.3.4.2. Tillatte verdier: for roletype *02* - *faglærer*, *lærerstudent*, *vikar*. For roletype *04* - *rådgiver*, *kontormedarbeider*, *skolehelsetjeneste*, *skolebibliotekar*, *vaktmester*, *renholdsarbeider*, *foresattrepresentant*, *sosiallærer*, *sensor*, *pptansatt*. For roletype *05* - *rektor*, *inspektør*. For roletype *07* - *iktansvarlig*.<br /> **Fortsatt støtte for verdier fra Vigo brukerhåndbok for Sats/Extens** <br /> **1.** Dersom rolletypen er *elev* og gruppetypen er *fag* kan rollen (fagstatus) eleven har i faget utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *F* (fritatt), *M* (fagopplæring i skole), *N* (nettundervisning), *U* (utenlandsk utvekslingselev i Norge), *P* (privatist), *R* (realkompetansevurdert), *V* (voksen), *O* (oppdragsundervisning), *S* (Avbrutt opplæring i faget). **2.** Dersom rolletypen er *elev* og gruppetypen er *programområde* kan rollen (elevstatus) eleven har i programområdet utdypes med følgende verdier (hentet fra Vigo brukerhåndbok for Sats/Extens): *E* (elev), *A* (spesialundervisning), *D* (deltidselev), *U* (utenlandsk utvekslingselev i Norge), *I* (norsk utvekslingselev i utlandet), *M* (fagopplæring i skole), *P* (privatist), *V* (voksen), *O* (oppdragsundervisning), *S* (avbrutt hele programområdet), *L* (lærling i programområdet (opplæring i bedrift)), *K* (lærekandidat i programområdet (opplæring i bedrift)).
 4.3.4.4|status|Status på medlemskap|O||Sier om relasjonen skal være aktiv eller ikke. Settes som regel til *1*, kan settes til *0* om relasjonen skal deaktiveres.
 4.3.4.6|comments|Kommentar på rolle 			
 4.3.4.7|datetime|Tidspunkt der gjeldende medlemskapstatus ble oppdatert|V
@@ -350,7 +351,7 @@ P4.3.3.13.2.7|comments|Kommentarer|V||Kommentar for fraværet.
 5.7|email|E-mail adresse med høyest prioritet/hovedadresse|-|-
 5.8|url|Webside med høyest prioritet/hovedadresse|V||Ikke bruk relative adresser, bare fulle adresser.
 5.9|userid|Personens identifikator|-|-|Selve verdien på identifikatoren, for eksempel brukernavn.
-5.9.1|useridtype|Type identifikator|O||Oblikatorisk her, valgfri i IMS. Identifikatorer som skal fylles ut i dette uttrekket om informasjonen finnes er: *personNIN* – fødselsnummer/d-nummer eller lignende, *personNINencrypted* – personNIN kryptert slik at avsender kan dekryptere innholdet til en personNIN (Kryperingsmetode avtales mellom avsender og mottaker utenfor overføringen), *personLIN* - lokalt gitt ID-nummer, *personFIN* - VIGO-nr, *studentID* – Elevnummer, *workforceID* – ansattnummer, *username* – brukernavn, *sisID* – systemidentifikator i SAS/SIS(IPOS/OID), *feideID* - Feidebruker identifikator. Tilsvarer verdien eduPersonPrincipalName i [feidedokumentasjonen](https://docs.feide.no/reference/schema/info_uh/uh_attributter_ch02.html#edupersonprincipalname), *dufNumber* - DUF-nummer, *dNumber* - D-nummer, *microsoftUPN* - Brukernavn i office 365/Azure AD.
+5.9.1|useridtype|Type identifikator|O||Oblikatorisk her, valgfri i IMS. Identifikatorer som skal fylles ut i dette uttrekket om informasjonen finnes er: *personNIN* – fødselsnummer,D-nummer eller DUF-nummer, *personNINencrypted* – personNIN kryptert slik at avsender kan dekryptere innholdet til en personNIN (Kryperingsmetode avtales mellom avsender og mottaker utenfor overføringen), *personLIN* - lokalt gitt ID-nummer, *personFIN* - personidentifikator fra VIGO, *studentID* – Elevnummer, *workforceID* – ansattnummer, *username* – brukernavn, *sisID* – systemidentifikator i SAS/SIS(IPOS/OID), *feideID* - Feidebruker identifikator. Tilsvarer verdien eduPersonPrincipalName i [feidedokumentasjonen](https://docs.feide.no/reference/schema/info_uh/uh_attributter_ch02.html#edupersonprincipalname), *microsoftUPN* - Brukernavn i office 365/Azure AD.
 5.9.2|password|Passord|V||For userid av typen username kan passord settes.
 5.9.3|pw.encryptiontype	||V||Om passord er satt skal krypterinsmetoden angis her: *passwordMD5* – MD5-hash er benyttet, *passwordPlain* – passordet er i klartekst.
 5.10|timeframe|Gyldighetsområde i tid for et objekt|-|-|Brukes for å avgrense et objekt i tid, for eksempel et semester

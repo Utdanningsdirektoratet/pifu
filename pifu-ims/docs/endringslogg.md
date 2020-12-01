@@ -3,11 +3,10 @@
 **2020-06-11:**
 
 * Oppdatert til versjon 1.3.
-* La inn flere rolletyper under subrole.
-* La inn flere gruppetyper i skjema pifu-ims-go-grp.
-* La inn flere identifikatortyper for personer.
-* La inn flere foresatteroller.
+* Subrole er nå en liste over tillatte verdier.
+* La inn feideID og microsoftUPN som nye useridtypes.
 * La inn utvidelsen pifu_schoolType
+* La inn sammensattgruppe, elevråd, FAU, skoleutvalg, skolemiljøutvalg, SFO, og eksamensgruppe som nye grouptypes.
 * Namespace angir nå major version (v1) og attributtet *version* angi minor og patch endringer.
 
 **2019-06-07:**
