@@ -1,6 +1,6 @@
 # Endringslogg
 
-**2020-06-11:**
+**2020-04-12:**
 
 * Oppdatert til versjon 1.3.
 * Subrole er nå en liste over tillatte verdier.
