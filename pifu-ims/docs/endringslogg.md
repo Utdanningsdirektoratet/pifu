@@ -7,6 +7,7 @@
 * La inn feideID og microsoftUPN som nye useridtypes.
 * La inn utvidelsen pifu_schoolType
 * La inn sammensattgruppe, elevråd, FAU, skoleutvalg, skolemiljøutvalg, SFO, og eksamensgruppe som nye grouptypes.
+* La inn grepCodeGradeLevel som en ny pifu_id type.
 * Namespace angir nå major version (v1) og attributtet *version* angi minor og patch endringer.
 
 **2019-06-07:**
