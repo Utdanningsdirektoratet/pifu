@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2"
-	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-1.2"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="PIFU IMS_SAS 2019-06-07"
+<xs:schema xmlns="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-v1"
+	targetNamespace="http://pifu.no/xsd/pifu-ims_sas/pifu-ims_sas-v1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.3 2020-04-12"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
   
@@ -219,6 +219,8 @@
 			<xs:enumeration value="workforceID"/>
 			<xs:enumeration value="username"/>
 			<xs:enumeration value="sisID"/>
+			<xs:enumeration value="feideID"/>
+			<xs:enumeration value="microsoftUPN"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="userid" type="userid"/>
@@ -587,6 +589,13 @@
 			<xs:enumeration value="fag"/>
 			<xs:enumeration value="foresattegruppe"/>
 			<xs:enumeration value="språkopplæring"/>
+			<xs:enumeration value="sammensattgruppe"/>
+			<xs:enumeration value="elevråd"/>
+			<xs:enumeration value="fau"/>
+			<xs:enumeration value="skoleutvalg"/>
+			<xs:enumeration value="skolemiljøutvalg"/>
+			<xs:enumeration value="sfo"/>
+			<xs:enumeration value="eksamensgruppe"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -686,7 +695,43 @@
 	<!-- role - rolle i member -->
 	<xs:complexType name="role">
 		<xs:sequence>
-			<xs:element name="subrole" type="t_string32" minOccurs="0"/>
+			<xs:element name="subrole" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="t_string32">
+						<xs:enumeration value="faglærer"/>
+						<xs:enumeration value="lærerstudent"/>
+						<xs:enumeration value="vikar"/>
+						<xs:enumeration value="rådgiver"/>
+						<xs:enumeration value="kontormedarbeider"/>
+						<xs:enumeration value="skolehelsetjeneste"/>
+						<xs:enumeration value="skolebibliotekar"/>
+						<xs:enumeration value="vaktmester"/>
+						<xs:enumeration value="renholdsarbeider"/>
+						<xs:enumeration value="foresattrepresentant"/>
+						<xs:enumeration value="rektor"/>
+						<xs:enumeration value="inspektør"/>
+						<xs:enumeration value="iktansvarlig"/>
+						<xs:enumeration value="sosiallærer"/>
+						<xs:enumeration value="sensor"/>
+						<xs:enumeration value="pptansatt"/>
+						<xs:enumeration value="E"/>
+						<xs:enumeration value="A"/>
+						<xs:enumeration value="F"/>
+						<xs:enumeration value="M"/>
+						<xs:enumeration value="N"/>
+						<xs:enumeration value="U"/>
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="R"/>
+						<xs:enumeration value="V"/>
+						<xs:enumeration value="O"/>
+						<xs:enumeration value="S"/>
+						<xs:enumeration value="D"/>
+						<xs:enumeration value="I"/>
+						<xs:enumeration value="L"/>
+						<xs:enumeration value="K"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="status">
 				<xs:simpleType>
 					<xs:restriction base="t_integer1">
@@ -819,6 +864,7 @@
 			<xs:element ref="pifu_hasContactPerson" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="pifu_primaryRelation" minOccurs="0"/>
 			<xs:element ref="pifu_absence" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pifu_schoolType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extension"/>
@@ -846,6 +892,7 @@
 					<xs:enumeration value="domainName"/>
 					<xs:enumeration value="grepCode"/>
 					<xs:enumeration value="grepCodeShortForm"/>
+					<xs:enumeration value="grepCodeGradeLevel"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -1123,5 +1170,17 @@
 		<xs:restriction base="t_decimal8p4_wn"/>
 	</xs:simpleType>
 	<xs:element name="pifu_absence_value" type="pifu_absence_value"/>
+
+	<!-- pifu_schoolType - ulike typer institusjoner i skolen -->
+	<xs:simpleType name="pifu_schoolType">
+		<xs:restriction base="t_string128">
+			<xs:enumeration value="barneskole"/> <!-- Skole for 1.-7. trinn -->
+			<xs:enumeration value="ungdomsskole"/> <!-- Skole for 8.-10. trinn -->
+			<xs:enumeration value="videregående"/> <!-- Skole for vg1, vg2, vg3 og vg4 (påbygg) -->
+			<xs:enumeration value="barnehage"/> <!-- Barnehage -->
+			<xs:enumeration value="sfo"/> <!-- Skolefritidsordning (1.-4. trinn) -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="pifu_schoolType" type="pifu_schoolType"/>
 
 </xs:schema>
