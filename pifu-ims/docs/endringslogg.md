@@ -9,6 +9,8 @@
 * La inn sammensattgruppe, elevråd, FAU, skoleutvalg, skolemiljøutvalg, SFO, og eksamensgruppe som nye grouptypes.
 * La inn grepCodeGradeLevel som en ny pifu_id type.
 * Namespace angir nå major version (v1) og attributtet *version* angi minor og patch endringer.
+* Utvidet *guardian* kontaktpersonrolle til å gjelde også for personer som formelt er stedfortreder for en foresatt.
+* Tillatt utvidelser på gruppetypene: sammensattgruppe, sfo og eksamensgruppe.
 
 **2019-06-07:**
 
